@@ -13,9 +13,6 @@ import javax.swing.SwingUtilities;
  */
 public class Login extends javax.swing.JPanel {
 
-    /**
-     * Creates new form l_homePage
-     */
     public Login() {
         initComponents();
     }
