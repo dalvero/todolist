@@ -15,7 +15,6 @@ public class MyTask extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        footer = new component.MyPanelCustBorder();
         navbar = new component.MyPanelCustBorder();
         btn_navIcon = new component.MyLabel();
         myLabel1 = new component.MyLabel();
@@ -54,26 +53,11 @@ public class MyTask extends javax.swing.JPanel {
         myLabel19 = new component.MyLabel();
         myPanelCustBorder6 = new component.MyPanelCustBorder();
         myLabel20 = new component.MyLabel();
+        footer1 = new component.MyPanelCustBorder();
+        myLabel21 = new component.MyLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
         setPreferredSize(new java.awt.Dimension(1000, 900));
-
-        footer.setBorderBottom(false);
-        footer.setBorderLeft(false);
-        footer.setBorderRight(false);
-        footer.setBorderTop(false);
-        footer.setPreferredSize(new java.awt.Dimension(100, 50));
-
-        javax.swing.GroupLayout footerLayout = new javax.swing.GroupLayout(footer);
-        footer.setLayout(footerLayout);
-        footerLayout.setHorizontalGroup(
-            footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        footerLayout.setVerticalGroup(
-            footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
 
         navbar.setBorderBottom(false);
         navbar.setBorderColor(new java.awt.Color(102, 102, 102));
@@ -490,11 +474,38 @@ public class MyTask extends javax.swing.JPanel {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        footer1.setBorderBottom(false);
+        footer1.setBorderLeft(false);
+        footer1.setBorderRight(false);
+        footer1.setBorderTop(false);
+        footer1.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        myLabel21.setText("@copyrighttodolist2025");
+        myLabel21.setColorClick(new java.awt.Color(0, 0, 0));
+        myLabel21.setColorOver(new java.awt.Color(0, 0, 0));
+        myLabel21.setFont(new java.awt.Font("Gavoline", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout footer1Layout = new javax.swing.GroupLayout(footer1);
+        footer1.setLayout(footer1Layout);
+        footer1Layout.setHorizontalGroup(
+            footer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footer1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(myLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(363, 363, 363))
+        );
+        footer1Layout.setVerticalGroup(
+            footer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footer1Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(myLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(footer, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
@@ -514,6 +525,7 @@ public class MyTask extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(27, 27, 27))))
+            .addComponent(footer1, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -537,16 +549,9 @@ public class MyTask extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(myPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
-                .addComponent(footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(footer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
-        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-        if (toDoFrame != null) {
-            toDoFrame.showHomePage();
-        }
-    }//GEN-LAST:event_btn_navIconMouseClicked
 
     private void myTextFieldCustBorder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myTextFieldCustBorder1ActionPerformed
         // TODO add your handling code here:
@@ -564,10 +569,17 @@ public class MyTask extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
+    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showHomePage();
+        }
+    }//GEN-LAST:event_btn_navIconMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private component.MyLabel btn_navIcon;
-    private component.MyPanelCustBorder footer;
+    private component.MyPanelCustBorder footer1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -586,6 +598,7 @@ public class MyTask extends javax.swing.JPanel {
     private component.MyLabel myLabel19;
     private component.MyLabel myLabel2;
     private component.MyLabel myLabel20;
+    private component.MyLabel myLabel21;
     private component.MyLabel myLabel3;
     private component.MyLabel myLabel4;
     private component.MyLabel myLabel5;
