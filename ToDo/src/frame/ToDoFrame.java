@@ -3,16 +3,17 @@ package frame;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import javax.swing.JFrame;
 import panel.HomePage;
 import panel.Login;
 import panel.Register;
+import panel.MyTask;
 
 public class ToDoFrame extends javax.swing.JFrame {
     // INSIALISASI PANEL
     private HomePage homePage;
     private Register register;
     private Login login;
+    private MyTask myTask;
     
     public ToDoFrame() {
         initComponents();
@@ -31,7 +32,7 @@ public class ToDoFrame extends javax.swing.JFrame {
         
         // SET LAYOUT UNTUK FRAME CARDLAYOUT
         getContentPane().setLayout(new CardLayout());
-        showHomePage();
+        showMyTask();
     }
 
     // METHOD UNTUK MENAMPILKAN HOME PAGE
@@ -65,6 +66,16 @@ public class ToDoFrame extends javax.swing.JFrame {
         // MENAMPILKAN KEDALAM PANE KONTEN LAND PANEL DENGAN NAMA "landPanel"
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "login");
+    }
+    
+    public void showMyTask(){
+        // INISIALISASI LANDPANEL
+        myTask = new MyTask();
+        getContentPane().add(myTask, "myTask");        
+        
+        // MENAMPILKAN KEDALAM PANE KONTEN LAND PANEL DENGAN NAMA "landPanel"
+        CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
+        cardLayout.show(getContentPane(), "myTask");
     }
     
     @SuppressWarnings("unchecked")

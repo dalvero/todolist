@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/uas-pbo/ToDo/src/panel/Register.java</file>
-            <file>file:/C:/xampp/htdocs/uas-pbo/ToDo/src/panel/HomePage.java</file>
-            <file>file:/C:/xampp/htdocs/uas-pbo/ToDo/src/frame/ToDoFrame.java</file>
-            <file>file:/C:/xampp/htdocs/uas-pbo/ToDo/src/panel/l_myTask.java</file>
-            <file>file:/C:/xampp/htdocs/uas-pbo/ToDo/src/panel/Login.java</file>
+            <file>file:/D:/project_kuliah/todolist/ToDo/src/frame/ToDoFrame.java</file>
+            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/l_myTask.java</file>
+            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/Login.java</file>
+            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/HomePage.java</file>
         </group>
     </open-files>
 </project-private>

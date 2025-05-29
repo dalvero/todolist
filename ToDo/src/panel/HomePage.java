@@ -39,9 +39,10 @@ public class HomePage extends javax.swing.JPanel {
         l_text1 = new component.MyLabel();
         l_text2 = new component.MyLabel();
         l_text3 = new component.MyLabel();
-        p_footer = new component.MyPanelCustBorder();
+        p_footer3 = new component.MyPanelCustBorder();
 
         setBackground(new java.awt.Color(245, 245, 245));
+        setFocusTraversalPolicyProvider(true);
 
         navbar.setBorderColor(new java.awt.Color(102, 102, 102));
         navbar.setBorderLeft(false);
@@ -143,20 +144,20 @@ public class HomePage extends javax.swing.JPanel {
         l_text3.setColorOver(new java.awt.Color(0, 0, 0));
         l_text3.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
 
-        p_footer.setBorderBottom(false);
-        p_footer.setBorderColor(new java.awt.Color(102, 102, 102));
-        p_footer.setBorderLeft(false);
-        p_footer.setBorderRight(false);
-        p_footer.setPreferredSize(new java.awt.Dimension(100, 50));
+        p_footer3.setBorderBottom(false);
+        p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
+        p_footer3.setBorderLeft(false);
+        p_footer3.setBorderRight(false);
+        p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        javax.swing.GroupLayout p_footerLayout = new javax.swing.GroupLayout(p_footer);
-        p_footer.setLayout(p_footerLayout);
-        p_footerLayout.setHorizontalGroup(
-            p_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
+        p_footer3.setLayout(p_footer3Layout);
+        p_footer3Layout.setHorizontalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        p_footerLayout.setVerticalGroup(
-            p_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        p_footer3Layout.setVerticalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
@@ -175,48 +176,48 @@ public class HomePage extends javax.swing.JPanel {
                 .addGap(54, 54, 54)
                 .addComponent(p_circle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(336, 336, 336))
-            .addComponent(p_footer, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
+            .addComponent(p_footer3, javax.swing.GroupLayout.DEFAULT_SIZE, 1366, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(171, 171, 171)
+                .addGap(155, 155, 155)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(p_circle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addComponent(l_title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(l_text1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(l_text2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(l_text3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 329, Short.MAX_VALUE)
-                .addComponent(p_footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 345, Short.MAX_VALUE)
+                .addComponent(p_footer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
-        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-        if (toDoFrame != null) {
-            toDoFrame.showRegister();
-        } 
-    }//GEN-LAST:event_btn_registerActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
         if (toDoFrame != null) {
             toDoFrame.showLogin();
-        } 
+        }
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void btn_registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerActionPerformed
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showRegister();
+        }
+    }//GEN-LAST:event_btn_registerActionPerformed
 
     private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
         if (toDoFrame != null) {
             toDoFrame.showHomePage();
-        } 
+        }
     }//GEN-LAST:event_btn_navIconMouseClicked
 
 
@@ -231,6 +232,6 @@ public class HomePage extends javax.swing.JPanel {
     private component.MyLabel l_titleCircle;
     private component.MyPanelCustBorder navbar;
     private component.MyPanel p_circle;
-    private component.MyPanelCustBorder p_footer;
+    private component.MyPanelCustBorder p_footer3;
     // End of variables declaration//GEN-END:variables
 }
