@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/project_kuliah/todolist/ToDo/src/frame/ToDoFrame.java</file>
-            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/MyTask.java</file>
-            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/Login.java</file>
-            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/TambahToDoList.java</file>
-            <file>file:/D:/project_kuliah/todolist/ToDo/src/panel/HomePage.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/todolist/ToDo/src/frame/ToDoFrame.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/todolist/ToDo/src/panel/Pomodoro.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/todolist/ToDo/src/panel/HomePage.java</file>
+            <file>file:/C:/Users/ASUS/OneDrive/Documents/NetBeansProjects/todolist/ToDo/src/panel/Task.java</file>
         </group>
     </open-files>
 </project-private>
