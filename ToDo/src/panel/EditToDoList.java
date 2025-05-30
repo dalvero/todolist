@@ -25,12 +25,6 @@ public class EditToDoList extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        navbar = new component.MyPanelCustBorder();
-        btn_navIcon = new component.MyLabel();
-        myLabel1 = new component.MyLabel();
-        myLabel2 = new component.MyLabel();
-        myLabel3 = new component.MyLabel();
-        jLabel1 = new javax.swing.JLabel();
         myLabel4 = new component.MyLabel();
         myTextFieldCustBorder1 = new component.MyTextFieldCustBorder();
         myLabel5 = new component.MyLabel();
@@ -41,49 +35,22 @@ public class EditToDoList extends javax.swing.JPanel {
         myTextFieldCustBorder4 = new component.MyTextFieldCustBorder();
         myButton1 = new component.MyButton();
         footer1 = new component.MyPanelCustBorder();
-        myLabel21 = new component.MyLabel();
+        navbar = new component.MyPanelCustBorder();
+        btn_navIcon = new component.MyLabel();
+        myLabel1 = new component.MyLabel();
+        myLabel2 = new component.MyLabel();
+        myLabel3 = new component.MyLabel();
+        jLabel1 = new javax.swing.JLabel();
+        myTextFieldCustBorder5 = new component.MyTextFieldCustBorder();
+        myLabel8 = new component.MyLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
-
-        navbar.setBorderBottom(false);
-        navbar.setBorderColor(new java.awt.Color(102, 102, 102));
-        navbar.setBorderLeft(false);
-        navbar.setBorderRight(false);
-        navbar.setBorderTop(false);
-        navbar.setPreferredSize(new java.awt.Dimension(1050, 50));
-        navbar.setLayout(null);
-
-        btn_navIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/todoIcon24.png"))); // NOI18N
-        btn_navIcon.setText("  Edit-Do List");
-        btn_navIcon.setColorClick(new java.awt.Color(102, 102, 102));
-        btn_navIcon.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_navIcon.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
-        btn_navIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_navIconMouseClicked(evt);
-            }
-        });
-        navbar.add(btn_navIcon);
-        btn_navIcon.setBounds(36, 4, 140, 40);
-
-        myLabel1.setText("My Task");
-        navbar.add(myLabel1);
-        myLabel1.setBounds(830, 20, 52, 13);
-
-        myLabel2.setText("Pomodoro");
-        navbar.add(myLabel2);
-        myLabel2.setBounds(900, 20, 60, 13);
-
-        myLabel3.setText("Logout");
-        navbar.add(myLabel3);
-        myLabel3.setBounds(990, 20, 40, 13);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
-        navbar.add(jLabel1);
-        jLabel1.setBounds(1050, 10, 30, 30);
+        setLayout(null);
 
         myLabel4.setText("Nama Project");
         myLabel4.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        add(myLabel4);
+        myLabel4.setBounds(180, 90, 114, 18);
 
         myTextFieldCustBorder1.setCornerRadius(10);
         myTextFieldCustBorder1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,27 +58,40 @@ public class EditToDoList extends javax.swing.JPanel {
                 myTextFieldCustBorder1ActionPerformed(evt);
             }
         });
+        add(myTextFieldCustBorder1);
+        myTextFieldCustBorder1.setBounds(180, 120, 573, 46);
 
-        myLabel5.setText("Nama Project");
+        myLabel5.setText("Status");
         myLabel5.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        add(myLabel5);
+        myLabel5.setBounds(180, 180, 114, 18);
 
         myTextFieldCustBorder2.setCornerRadius(10);
+        add(myTextFieldCustBorder2);
+        myTextFieldCustBorder2.setBounds(180, 200, 573, 46);
 
-        myLabel6.setText("Nama Project");
+        myLabel6.setText("Tingkatan");
         myLabel6.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        add(myLabel6);
+        myLabel6.setBounds(180, 270, 114, 18);
 
         myTextFieldCustBorder3.setCornerRadius(10);
+        add(myTextFieldCustBorder3);
+        myTextFieldCustBorder3.setBounds(180, 290, 573, 46);
 
-        myLabel7.setText("Nama Project");
+        myLabel7.setText("Waktu");
         myLabel7.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        add(myLabel7);
+        myLabel7.setBounds(180, 360, 114, 18);
 
-        myTextFieldCustBorder4.setText("myTextFieldCustBorder1");
         myTextFieldCustBorder4.setCornerRadius(10);
         myTextFieldCustBorder4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myTextFieldCustBorder4ActionPerformed(evt);
             }
         });
+        add(myTextFieldCustBorder4);
+        myTextFieldCustBorder4.setBounds(180, 380, 573, 46);
 
         myButton1.setBackground(new java.awt.Color(0, 0, 0));
         myButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,6 +106,8 @@ public class EditToDoList extends javax.swing.JPanel {
                 myButton1ActionPerformed(evt);
             }
         });
+        add(myButton1);
+        myButton1.setBounds(611, 525, 137, 39);
 
         footer1.setBorderBottom(false);
         footer1.setBorderLeft(false);
@@ -133,82 +115,74 @@ public class EditToDoList extends javax.swing.JPanel {
         footer1.setBorderTop(false);
         footer1.setPreferredSize(new java.awt.Dimension(100, 50));
 
-        myLabel21.setText("@copyrighttodolist2025");
-        myLabel21.setColorClick(new java.awt.Color(0, 0, 0));
-        myLabel21.setColorOver(new java.awt.Color(0, 0, 0));
-        myLabel21.setFont(new java.awt.Font("Gavoline", 0, 14)); // NOI18N
-
         javax.swing.GroupLayout footer1Layout = new javax.swing.GroupLayout(footer1);
         footer1.setLayout(footer1Layout);
         footer1Layout.setHorizontalGroup(
             footer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footer1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(myLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(445, 445, 445))
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         footer1Layout.setVerticalGroup(
             footer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, footer1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(myLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navbar, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(myTextFieldCustBorder4, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myTextFieldCustBorder3, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myTextFieldCustBorder2, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myTextFieldCustBorder1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(myLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(myButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(252, 252, 252))
-            .addComponent(footer1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(navbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114)
-                .addComponent(myLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myTextFieldCustBorder1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(myLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myTextFieldCustBorder2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(myLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myTextFieldCustBorder3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(myLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myTextFieldCustBorder4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(myButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
-                .addComponent(footer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(footer1);
+        footer1.setBounds(0, 650, 1000, 50);
+
+        navbar.setBorderBottom(false);
+        navbar.setBorderColor(new java.awt.Color(102, 102, 102));
+        navbar.setBorderLeft(false);
+        navbar.setBorderRight(false);
+        navbar.setBorderTop(false);
+        navbar.setPreferredSize(new java.awt.Dimension(1050, 50));
+        navbar.setLayout(null);
+
+        btn_navIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/todoIcon24.png"))); // NOI18N
+        btn_navIcon.setText("  To-Do List");
+        btn_navIcon.setColorClick(new java.awt.Color(102, 102, 102));
+        btn_navIcon.setColorOver(new java.awt.Color(153, 153, 153));
+        btn_navIcon.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_navIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_navIconMouseClicked(evt);
+            }
+        });
+        navbar.add(btn_navIcon);
+        btn_navIcon.setBounds(36, 4, 130, 40);
+
+        myLabel1.setText("My Task");
+        navbar.add(myLabel1);
+        myLabel1.setBounds(730, 20, 52, 13);
+
+        myLabel2.setText("Pomodoro");
+        navbar.add(myLabel2);
+        myLabel2.setBounds(800, 20, 60, 13);
+
+        myLabel3.setText("Logout");
+        navbar.add(myLabel3);
+        myLabel3.setBounds(880, 20, 40, 13);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
+        navbar.add(jLabel1);
+        jLabel1.setBounds(940, 10, 30, 30);
+
+        add(navbar);
+        navbar.setBounds(0, 0, 1000, 50);
+
+        myTextFieldCustBorder5.setCornerRadius(10);
+        myTextFieldCustBorder5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myTextFieldCustBorder5ActionPerformed(evt);
+            }
+        });
+        add(myTextFieldCustBorder5);
+        myTextFieldCustBorder5.setBounds(180, 460, 573, 46);
+
+        myLabel8.setText("Tanggal");
+        myLabel8.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        add(myLabel8);
+        myLabel8.setBounds(180, 440, 114, 18);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
-        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-        if (toDoFrame != null) {
-            toDoFrame.showHomePage();
-        }
-    }//GEN-LAST:event_btn_navIconMouseClicked
 
     private void myButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myButton1ActionPerformed
         // TODO add your handling code here:
@@ -222,6 +196,17 @@ public class EditToDoList extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_myTextFieldCustBorder4ActionPerformed
 
+    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showHomePage();
+        }
+    }//GEN-LAST:event_btn_navIconMouseClicked
+
+    private void myTextFieldCustBorder5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myTextFieldCustBorder5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_myTextFieldCustBorder5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private component.MyLabel btn_navIcon;
@@ -230,16 +215,17 @@ public class EditToDoList extends javax.swing.JPanel {
     private component.MyButton myButton1;
     private component.MyLabel myLabel1;
     private component.MyLabel myLabel2;
-    private component.MyLabel myLabel21;
     private component.MyLabel myLabel3;
     private component.MyLabel myLabel4;
     private component.MyLabel myLabel5;
     private component.MyLabel myLabel6;
     private component.MyLabel myLabel7;
+    private component.MyLabel myLabel8;
     private component.MyTextFieldCustBorder myTextFieldCustBorder1;
     private component.MyTextFieldCustBorder myTextFieldCustBorder2;
     private component.MyTextFieldCustBorder myTextFieldCustBorder3;
     private component.MyTextFieldCustBorder myTextFieldCustBorder4;
+    private component.MyTextFieldCustBorder myTextFieldCustBorder5;
     private component.MyPanelCustBorder navbar;
     // End of variables declaration//GEN-END:variables
 }
