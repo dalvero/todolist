@@ -6,6 +6,7 @@ import frame.ToDoFrame;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import repository.UserRepository;
 public class Register extends javax.swing.JPanel {
     public Register() {
         initComponents();
@@ -117,6 +118,11 @@ public class Register extends javax.swing.JPanel {
         btn_registerForm.setColorOver(new java.awt.Color(153, 153, 153));
         btn_registerForm.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
         btn_registerForm.setRadius(15);
+        btn_registerForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_registerFormActionPerformed(evt);
+            }
+        });
 
         l_sudahPunyaAkun.setText("Sudah punya akun?");
         l_sudahPunyaAkun.setColorClick(new java.awt.Color(0, 0, 0));
@@ -366,6 +372,28 @@ public class Register extends javax.swing.JPanel {
             frame.setState(JFrame.ICONIFIED); // Set window to minimized state
         }
     }//GEN-LAST:event_btn_minimizeActionPerformed
+
+    private void btn_registerFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerFormActionPerformed
+        if (t_namaLengkap.getText().isEmpty()) {
+            MyOptionPane.showWarning(this, "Nama lengkap harus diisi!", "Warning");
+        } else if (t_username.getText().isEmpty()) {
+            MyOptionPane.showWarning(this, "Username harus diisi!", "Warning");
+        } else if (t_password.getPassword().length == 0) {
+            MyOptionPane.showWarning(this, "Password harus diisi!", "Warning");
+        } else {            
+            String namaLengkap = t_namaLengkap.getText();
+            String username = t_username.getText();
+            char[] passwordChars = t_password.getPassword();
+            String password = new String(passwordChars);
+            
+            UserRepository.registerUser(namaLengkap, username, password);
+            
+            ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+            if (toDoFrame != null) {
+                toDoFrame.showLogin();
+            }
+        }
+    }//GEN-LAST:event_btn_registerFormActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

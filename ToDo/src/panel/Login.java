@@ -4,11 +4,14 @@ import frame.ToDoFrame;
 import javax.swing.JFrame;
 import component.MyOptionPane;
 import javax.swing.SwingUtilities;
+import repository.UserRepository;
+import objek.User;
 
 public class Login extends javax.swing.JPanel {
-
+    public static User user;
+    
     public Login() {
-        initComponents();
+        initComponents();        
     }
 
     @SuppressWarnings("unchecked")
@@ -212,6 +215,11 @@ public class Login extends javax.swing.JPanel {
         btn_loginForm.setColorOver(new java.awt.Color(153, 153, 153));
         btn_loginForm.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
         btn_loginForm.setRadius(15);
+        btn_loginForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_loginFormActionPerformed(evt);
+            }
+        });
 
         l_belumPunyaAkun.setText("Belum punya akun?");
         l_belumPunyaAkun.setColorClick(new java.awt.Color(0, 0, 0));
@@ -327,7 +335,7 @@ public class Login extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_registerActionPerformed
 
     private void btn_closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closeActionPerformed
-        MyOptionPane.showConfirm(null, "Yakin ingin keluar aplikasi?", "Konfirmasi", result -> {
+        MyOptionPane.showConfirm(this, "Yakin ingin keluar aplikasi?", "Konfirmasi", result -> {
             if (result) {
                 System.exit(0);
             } else {
@@ -342,6 +350,28 @@ public class Login extends javax.swing.JPanel {
             frame.setState(JFrame.ICONIFIED); // Set window to minimized state
         }
     }//GEN-LAST:event_btn_minimizeActionPerformed
+
+    private void btn_loginFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginFormActionPerformed
+        if (t_username.getText().isEmpty()) {
+            MyOptionPane.showWarning(this, "Username harus diisi!", "Warning");
+        } else if (t_password.getPassword().length == 0) {
+            MyOptionPane.showWarning(this, "Password harus diisi!", "Warning");
+        } else {            
+            String username = t_username.getText();
+            char[] passwordChars = t_password.getPassword();
+            String password = new String(passwordChars);
+            user = UserRepository.loginUser(username, password);
+            if (user != null) {
+                ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+                if (toDoFrame != null) {
+                    toDoFrame.showMyTask();
+                }
+            }                        
+        }
+        
+        
+
+    }//GEN-LAST:event_btn_loginFormActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

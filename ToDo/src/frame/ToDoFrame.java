@@ -1,21 +1,19 @@
 package frame;
 
 import java.awt.CardLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import panel.EditToDoList;
 import panel.HomePage;
 import panel.Login;
 import panel.Register;
 import panel.TambahToDoList;
-import panel.Task;
+import panel.MyTask;
 
 public class ToDoFrame extends javax.swing.JFrame {
     // INSIALISASI PANEL
     private HomePage homePage;
     private Register register;
     private Login login;
-    private Task myTask;
+    private MyTask myTask;
     private TambahToDoList tambahToDoList;
     private EditToDoList editToDoList;
     
@@ -32,7 +30,7 @@ public class ToDoFrame extends javax.swing.JFrame {
         
         // SET LAYOUT UNTUK FRAME CARDLAYOUT
         getContentPane().setLayout(new CardLayout());
-        showMyTask();
+        showHomePage();
     }
 
     // METHOD UNTUK MENAMPILKAN HOME PAGE
@@ -68,7 +66,7 @@ public class ToDoFrame extends javax.swing.JFrame {
     // METHOD UNTUK MENAMPILKAN TASK
     public void showMyTask(){
         // INISIALISASI TASK
-        myTask = new Task();
+        myTask = new MyTask();
         getContentPane().add(myTask, "myTask");        
                 
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();

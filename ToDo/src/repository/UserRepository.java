@@ -1,5 +1,7 @@
 package repository;
 
+import com.mysql.jdbc.PreparedStatement;
+import component.MyOptionPane;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -73,47 +75,63 @@ public class UserRepository {
         }        
         return listAllUser;
     }
-    
-    
-    
-    public static void registerUser(String namaLengkap, String username, String password){        
-        jumBaris = 0;        
-        Connection connect = Koneksi.koneksiDatabase();
-        try {
-            stmt = connect.createStatement();
-            query = "INSERT INTO `user` (`nama_lengkap`, `username`, `password`)"
-                    + "VALUES ('" + namaLengkap + "', '" + username + "', '"
-                    + password + "')";                                
-            stmt.executeUpdate(query);
-            stmt_c = connect.createStatement();            
-            rs_c = stmt_c.executeQuery("SELECT COUNT(*) FROM `user`");
-            while(rs_c.next()){
-                jumBaris = rs_c.getInt(1);
+            
+    public static void registerUser(String namaLengkap, String username, String password) {
+        jumBaris = 0;
+        Connection connect = Koneksi.koneksiDatabase();        
+        
+        // QUERY DENGAN PLACE HOLDER AGAR LEBIH AMAN (MENGHINDARI SQL INJECTION)
+        query = "INSERT INTO user (nama_lengkap, username, password) VALUES (?, ?, ?)";
+        try (
+            // MEMBUAT PREPAREDSTATEMENT UNTUK QUERY
+            PreparedStatement pstmt = (PreparedStatement) connect.prepareStatement(query);
+            Statement stmtCount = connect.createStatement()
+        ) {
+            
+            // MENGISI PLACE HOLDER MENGGUNAKAN PREPARED STATEMENT
+            pstmt.setString(1, namaLengkap);
+            pstmt.setString(2, username);
+            pstmt.setString(3, password);
+            pstmt.executeUpdate();
+
+            // UNTUK MENGETAHUI JUMLAH TERBARU DARI USER
+            ResultSet rs = stmtCount.executeQuery("SELECT COUNT(*) FROM user");
+            if (rs.next()) {
+                jumBaris = rs.getInt(1);
             }
-            System.out.println(jumBaris);            
-            stmt.close();
-            stmt_c.close();
-            connect.close();            
+            rs.close();
+            System.out.println("Total user: " + jumBaris);
         } catch (SQLException e) {
-            System.out.println("Error : " + e.getMessage());
-        }       
+            System.out.println("Error: " + e.getMessage());
+        }
     }
+
     
-    public static boolean loginUser(String username, String password){
-        for (User user : UserRepository.getAllUser()) {
+    public static User loginUser(String username, String password){        
+        boolean isValid = false;
+        User userValid = null;
+        for (User user : UserRepository.getAllUser()) {            
             if (username.equals(user.getUsername())) {
-                if (password.equals(user.getPassword())) {
-                    return true;
-                } else {
-                    System.out.println("Password Salah");
-                    return false;
+                if (password.equals(user.getPassword())) {                    
+                    userValid = user;
+                    isValid = true;
+                    break;
+                } else {                    
+                    isValid = false;
                 }
-            } else {
-                System.out.println("Username Salah");
-                return false;
+            } else {                
+                isValid = false;
             }
         }
-        return false;
+        
+        if (isValid) {
+            return userValid;
+        } else {
+            System.out.println("Username Salah");
+            MyOptionPane.showWarning(null, "Username atau Password Anda mungkin salah, silahkan ulangi!", "Warning");                
+            return null;
+        }
+        
     }
 }
 
