@@ -200,6 +200,11 @@ public class Login extends javax.swing.JPanel {
         t_password.setBorderFocusColor(new java.awt.Color(128, 128, 128));
         t_password.setCornerRadius(15);
         t_password.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        t_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t_passwordActionPerformed(evt);
+            }
+        });
 
         t_username.setForeground(new java.awt.Color(0, 0, 0));
         t_username.setBorderFocusColor(new java.awt.Color(128, 128, 128));
@@ -367,11 +372,27 @@ public class Login extends javax.swing.JPanel {
                     toDoFrame.showMyTask();
                 }
             }                        
-        }
-        
-        
-
+        }                
     }//GEN-LAST:event_btn_loginFormActionPerformed
+
+    private void t_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_passwordActionPerformed
+        if (t_username.getText().isEmpty()) {
+            MyOptionPane.showWarning(this, "Username harus diisi!", "Warning");
+        } else if (t_password.getPassword().length == 0) {
+            MyOptionPane.showWarning(this, "Password harus diisi!", "Warning");
+        } else {            
+            String username = t_username.getText();
+            char[] passwordChars = t_password.getPassword();
+            String password = new String(passwordChars);
+            user = UserRepository.loginUser(username, password);
+            if (user != null) {
+                ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+                if (toDoFrame != null) {
+                    toDoFrame.showMyTask();
+                }
+            }                        
+        }
+    }//GEN-LAST:event_t_passwordActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

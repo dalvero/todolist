@@ -3,6 +3,7 @@ package panel;
 
 import component.MyScrollPane;
 import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -24,16 +25,20 @@ public class AllTask extends javax.swing.JPanel {
                 
         setLayout(null);
         add(scrollPane);
-        showTask();
+        showTask(null);
     }
 
-    public void showTask(){
-        containerPanel.removeAll();
+    public void showTask(ArrayList<Task> taskList){
+        int taskId = Login.user.getId_user();
+        if (taskList == null) {
+            taskList = TaskRepository.getAllTask(taskId);
+        } 
         
-        for (Task task : TaskRepository.getAllTask(Login.user.getId_user())) {
-            System.out.println(task.getNama_tugas());
+        containerPanel.removeAll();                            
+        
+        for (Task task : taskList) {                        
             TaskPanel taskPanel = new TaskPanel(task.getNama_tugas(), task.getStatus(), task.getTingkatan(), task.getWaktu(), task.getTanggal());            
-            taskPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+            taskPanel.setAlignmentX(Component.LEFT_ALIGNMENT);            
             containerPanel.add(taskPanel);
             containerPanel.add(Box.createVerticalStrut(5));
         }

@@ -1,5 +1,12 @@
 package panel;
 
+import component.MyLabel;
+import component.MyOptionPane;
+import java.awt.Color;
+import javax.swing.SwingUtilities;
+import repository.TaskRepository;
+import java.awt.Component;
+
 public class TaskPanel extends javax.swing.JPanel {
 
 
@@ -8,7 +15,30 @@ public class TaskPanel extends javax.swing.JPanel {
                                         
         l_taskTitle.setText(namaTugas);
         l_taskTingkatan.setText(tingkatan);
-        l_tanggalTask.setText(tanggal);        
+        l_tanggalTask.setText(tanggal);   
+        
+        
+        // UBAH WARNA TINGKATAN SESUAI DENGAN SKALA PRIORITASNYA
+        setColorForTingkatan(l_taskTingkatan);
+    }
+    
+    private void setColorForTingkatan(MyLabel tingkatan){
+        if (tingkatan.getText().equals("High")) {
+            tingkatan.setForeground(Color.RED); // MERAH
+            tingkatan.setColor(Color.RED); 
+            tingkatan.setColorClick(Color.RED);
+            tingkatan.setColorOver(Color.RED);
+        } else if (tingkatan.getText().equals("Medium")) {            
+            tingkatan.setForeground(Color.BLUE); // KUNING
+            tingkatan.setColor(Color.BLUE); 
+            tingkatan.setColorClick(Color.BLUE);
+            tingkatan.setColorOver(Color.BLUE);
+        } else if (tingkatan.getText().equals("Low")) {
+            tingkatan.setForeground(Color.GREEN); // HIJAU
+            tingkatan.setColor(Color.GREEN); 
+            tingkatan.setColorClick(Color.GREEN);
+            tingkatan.setColorOver(Color.GREEN);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -30,6 +60,8 @@ public class TaskPanel extends javax.swing.JPanel {
         taskPanel.setCornerRadius(20);
 
         l_taskTitle.setText("Finish Project Proposal");
+        l_taskTitle.setColorClick(new java.awt.Color(0, 0, 0));
+        l_taskTitle.setColorOver(new java.awt.Color(0, 0, 0));
         l_taskTitle.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
 
         l_tanggalTask.setText("Due: 22 May, 2025");
@@ -44,12 +76,22 @@ public class TaskPanel extends javax.swing.JPanel {
 
         btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit.png"))); // NOI18N
         btn_edit.setRadius(1000);
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
 
         btn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/delete.png"))); // NOI18N
         btn_delete.setBorderColor(new java.awt.Color(204, 0, 0));
         btn_delete.setColorClick(new java.awt.Color(255, 102, 102));
         btn_delete.setColorOver(new java.awt.Color(255, 153, 153));
         btn_delete.setRadius(1000);
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout taskPanelLayout = new javax.swing.GroupLayout(taskPanel);
         taskPanel.setLayout(taskPanelLayout);
@@ -104,6 +146,33 @@ public class TaskPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        System.out.println("Mengedit Tugas : " + l_taskTitle.getText());        
+    }//GEN-LAST:event_btn_editActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        System.out.println("Menghapus Tugas : " + l_taskTitle.getText());        
+        MyOptionPane.showConfirm(null, "Yakin ingin menghapus tugas?", "Konfirmasi", result -> {
+            if (result) {
+                TaskRepository.deleteTask(TaskRepository.getTaskByName(l_taskTitle.getText()).getId_tugas());
+                
+                // MEREFRESH TAMPILAN ALL TASK
+                SwingUtilities.invokeLater(() -> {
+                    Component parent = this.getParent(); // THIS MERUJUK KE TASK PANEL
+                    while (parent != null && !(parent instanceof AllTask)) {
+                        parent = parent.getParent();
+                    }
+
+                    if (parent instanceof AllTask allTask) {
+                        allTask.showTask(null); // MEMANGGIL ULANG showTask()
+                    }
+                });
+            } else {
+                System.out.println("Batal hapus.");
+            }
+        });
+    }//GEN-LAST:event_btn_deleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

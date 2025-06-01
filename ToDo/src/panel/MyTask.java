@@ -9,16 +9,23 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.Box;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import repository.TaskRepository;
 import objek.Task;
 
 public class MyTask extends javax.swing.JPanel {
     private CardLayout cardLayout;    
-        
+    private String currentSection;
+    
     private static LocalDate date; // MENGAMBIL TANGGAL HARI INI    
     private static LocalTime now; // MENGAMBIL WAKTU SEKARANG SECARA REAL TIME
     private static DateTimeFormatter format; // FORMAT PENULISAN TANGGAL DAN WAKTU    
+    
+    private static String todayDate;
+    
+    private AllTask allTask;
+    private TodayTask todayTask;
     
     public MyTask() {
         initComponents();        
@@ -26,14 +33,20 @@ public class MyTask extends javax.swing.JPanel {
         cardLayout = new CardLayout();
         mainPanel.setLayout(cardLayout);
 
+        allTask = new AllTask();
+        todayTask = new TodayTask();
+        
         // MENAMBAHKAN PANEL-PANEL KE DALAM CARD LAYOUT
-        mainPanel.add(new AllTask(), "AllTask");
-        mainPanel.add(new TodayTask(), "TodayTask");
+        mainPanel.add(allTask, "AllTask");
+        mainPanel.add(todayTask, "TodayTask");
         mainPanel.add(new CompletedTask(), "CompletedTask");
 
         // MENAMBAHKAN mainPanel KE LAYOUT UTAMA (DI BAGIAN TENGAH)
         this.add(mainPanel, BorderLayout.CENTER);  
         userGreeting();
+        
+        // SET DEFAULT CURRENT SECTION = ALL TASK
+        currentSection = "All Task";
         
     }
 
@@ -115,21 +128,24 @@ public class MyTask extends javax.swing.JPanel {
         btn_navIcon.setBounds(36, 4, 130, 40);
 
         btn_myTask.setText("My Task");
+        btn_myTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         navbar.add(btn_myTask);
-        btn_myTask.setBounds(730, 20, 52, 13);
+        btn_myTask.setBounds(630, 20, 80, 18);
 
         btn_pomodoro.setText("Pomodoro");
+        btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         navbar.add(btn_pomodoro);
-        btn_pomodoro.setBounds(800, 20, 60, 13);
+        btn_pomodoro.setBounds(730, 20, 100, 18);
 
         btn_logout.setText("Logout");
+        btn_logout.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_logoutMouseClicked(evt);
             }
         });
         navbar.add(btn_logout);
-        btn_logout.setBounds(880, 20, 40, 13);
+        btn_logout.setBounds(850, 20, 70, 18);
 
         btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
         navbar.add(btn_profile);
@@ -221,8 +237,12 @@ public class MyTask extends javax.swing.JPanel {
         add(l_titleTask);
         l_titleTask.setBounds(280, 110, 110, 18);
 
-        t_search.setText("Search");
         t_search.setCornerRadius(15);
+        t_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t_searchActionPerformed(evt);
+            }
+        });
         add(t_search);
         t_search.setBounds(280, 140, 291, 37);
 
@@ -316,17 +336,43 @@ public class MyTask extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_logoutMouseClicked
 
     private void btn_allTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_allTaskMouseClicked
-        System.out.println("SHOWING ALL TASK PANEL");                
-        
-        cardLayout.show(mainPanel, "AllTask");
-        
-
+        l_titleTask.setText("All Task");
+        currentSection = "All Task";
+        System.out.println("SHOWING ALL TASK PANEL");   
+        allTask.showTask(null);
+        cardLayout.show(mainPanel, "AllTask");        
     }//GEN-LAST:event_btn_allTaskMouseClicked
 
     private void btn_todayTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_todayTaskMouseClicked
         l_titleTask.setText("Today Task");
-        cardLayout.show(mainPanel, "TodayTask");
+        currentSection = "Today Task";
+        System.out.println("SHOWING TODAY TASK PANEL");        
+        date = LocalDate.now();
+        todayDate =  date.getYear() + "-" + String.format("%02d", date.getMonthValue()) + "-" 
+                + date.getDayOfMonth();         
+        
+        todayTask.showTask(TaskRepository.getTodayTask(todayDate, Login.user.getId_user()));
+        
+        cardLayout.show(mainPanel, "TodayTask");        
     }//GEN-LAST:event_btn_todayTaskMouseClicked
+
+    private void t_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_searchActionPerformed
+        if (currentSection.equals("All Task")) {
+            System.out.println("SHOWING RESULT SEARCH ALL TASK PANEL");               
+            allTask.showTask(TaskRepository.searchTask(t_search.getText(), Login.user.getId_user(), null));            
+            cardLayout.show(mainPanel, "AllTask");   
+            mainPanel.revalidate();
+            mainPanel.repaint();
+            t_search.setText("");
+        } else if (currentSection.equals("Today Task")) {
+            System.out.println("SHOWING RESULT SEARCH TODAY TASK PANEL");               
+            todayTask.showTask(TaskRepository.searchTask(t_search.getText(), Login.user.getId_user(), todayDate));            
+            cardLayout.show(mainPanel, "TodayTask");   
+            mainPanel.revalidate();
+            mainPanel.repaint();
+            t_search.setText("");
+        }
+    }//GEN-LAST:event_t_searchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
