@@ -18,6 +18,15 @@ public class Task {
         this.waktu = waktu;
         this.tanggal = tanggal;
     }
+    
+    public Task(int id_user, String nama_tugas, String status, String tingkatan, String waktu, String tanggal) {        
+        this.id_user = id_user;
+        this.nama_tugas = nama_tugas;
+        this.status = status;
+        this.tingkatan = tingkatan;
+        this.waktu = waktu;
+        this.tanggal = tanggal;
+    }
 
     public Task(){
         

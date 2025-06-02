@@ -1,5 +1,6 @@
 package repository;
 
+import com.mysql.jdbc.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -8,12 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import koneksi.Koneksi;
 import objek.Task;
+import panel.Login;
 
 public class TaskRepository {
     private static ArrayList<Task> listAllTask = new ArrayList<>(); // ALL TASK
     private static ArrayList<Task> resultTask = new ArrayList<>(); // TASK BY SEARCH
     private static ArrayList<Task> todayTask = new ArrayList<>(); // TODAY TASK
-    
+    private static ArrayList<Task> completedTask = new ArrayList<>(); // COMPLETED TASK
     private static String query;
     private static ResultSet rs;
     private static Statement stmt;
@@ -220,6 +222,155 @@ public class TaskRepository {
             System.out.println("Error : " + e.getMessage());
         }          
         return todayTask;
+    }
+    
+    public static void addCompletedTask(Task task){
+        // CHECK APAKAH TASK SUDAH ADA ATAU BELUM
+        if (completedTask != null) {
+            for (Task tsk : completedTask) {
+                if (tsk.getId_tugas() == task.getId_tugas()) {
+                    System.out.println("Task Sudah Di Check Sebelumnya");
+                    return;
+                } 
+            }
+        }
+        
+        // PERBARUI KE DATABASE
+        Connection connect = Koneksi.koneksiDatabase();
+        try {
+            stmt = connect.createStatement();
+            query = "UPDATE tugas SET `status` = '" + task.getStatus() + "' WHERE `id_tugas` = '" + task.getId_tugas() + "'";
+            stmt.executeUpdate(query);
+            stmt.close();
+            connect.close();            
+        } catch (SQLException e) {
+            System.out.println("Error : " + e.getMessage());
+        }                        
+    }
+    
+    public static void uncheckTask(int id_tugas){
+        // PERBARUI KE DATABASE
+        Task task = new Task();
+        for (Task tsk : completedTask) {
+            if (tsk.getId_tugas() == id_tugas) {
+                task = tsk;
+            }
+        }
+        
+        task.setStatus("Belum Selesai");
+        
+        Connection connect = Koneksi.koneksiDatabase();
+        try {
+            stmt = connect.createStatement();
+            query = "UPDATE tugas SET `status` = '" + task.getStatus() + "' WHERE `id_tugas` = '" + task.getId_tugas() + "'";
+            stmt.executeUpdate(query);
+            stmt.close();
+            connect.close();            
+        } catch (SQLException e) {
+            System.out.println("Error : " + e.getMessage());
+        } 
+    }
+    
+    public static ArrayList<Task> getCompletedTask(int id_user){    
+        completedTask.clear();
+        System.out.println("AMBIL TASK YANG SELESAI DI DATABASE ");
+        
+        // MENGAMBIL TASK DI DATABASE
+        Connection connect = Koneksi.koneksiDatabase();
+        String data[][] = null;
+
+        try {
+            stmt = connect.createStatement();
+
+            // AMBIL DATA
+            query = "SELECT `id_tugas`, `id_user`, `nama_tugas`, `status`, `tingkatan`, "
+                    + "`waktu`, `tanggal` FROM `tugas` WHERE `status` = 'Selesai' AND `id_user` = " + id_user;
+
+            rs = stmt.executeQuery(query);
+
+            ResultSetMetaData meta = rs.getMetaData();            
+            int jmlKolom = meta.getColumnCount();            
+            data = new String[1000][jmlKolom];
+            int r = 0;                                                     
+
+            while (rs.next()) {
+                for (int c = 0; c < jmlKolom; c++) {
+                    data[r][c] = rs.getString(c+1);                    
+                }
+                r++;
+            }          
+
+            int jmlBaris = r;
+            String tmparray[][] = data;
+            data = new String[jmlBaris][jmlKolom];
+
+            for (r = 0; r < jmlBaris; r++) {
+                for (int c = 0; c < jmlKolom; c++) {
+                    data[r][c] = tmparray[r][c];                     
+                }                
+            }
+
+            // TASK ATRIBUT
+            int idTugas = 0;
+            int idUser = 0;
+            String namaTugas = "";
+            String status = "";
+            String tingkatan = "";
+            String waktu = "";
+            String tanggal = "";
+            for (int i = 0; i < jmlBaris ; i++) {
+                idTugas = Integer.parseInt(data[i][0]);
+                idUser = Integer.parseInt(data[i][1]);
+                namaTugas = data[i][2];
+                status = data[i][3];
+                tingkatan = data[i][4];
+                waktu = data[i][5];
+                tanggal = data[i][6];
+
+                completedTask.add(new Task(idTugas, idUser, namaTugas, status, tingkatan, waktu, tanggal));
+            }
+
+            stmt.close();
+            connect.close();
+        } catch (SQLException e) {
+            System.out.println("Error : " + e.getMessage());
+        }        
+        
+        
+        return completedTask;
+    }
+    
+    public static void addTask(Task task){
+        jumBaris = 0;
+        Connection connect = Koneksi.koneksiDatabase();        
+        
+        // QUERY DENGAN PLACE HOLDER AGAR LEBIH AMAN (MENGHINDARI SQL INJECTION)
+        query = "INSERT INTO tugas (id_user, nama_tugas, status, tingkatan, waktu, tanggal) VALUES (?, ?, ?, ?, ?, ?)";
+        try (
+            // MEMBUAT PREPAREDSTATEMENT UNTUK QUERY
+            PreparedStatement pstmt = (PreparedStatement) connect.prepareStatement(query);
+            Statement stmtCount = connect.createStatement()
+        ) {
+            
+            // MENGISI PLACE HOLDER MENGGUNAKAN PREPARED STATEMENT
+            pstmt.setInt(1, Login.user.getId_user());
+            pstmt.setString(2, task.getNama_tugas());
+            pstmt.setString(3, task.getStatus());
+            pstmt.setString(4, task.getTingkatan());
+            pstmt.setString(5, task.getWaktu());
+            pstmt.setString(6, task.getTanggal());            
+            pstmt.executeUpdate();
+
+            // UNTUK MENGETAHUI JUMLAH TERBARU DARI USER
+            ResultSet rs = stmtCount.executeQuery("SELECT COUNT(*) FROM tugas");
+            if (rs.next()) {
+                jumBaris = rs.getInt(1);
+            }
+            rs.close();
+            System.out.println("Total tugas: " + jumBaris);
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
     
     public static void deleteTask(int id_task){

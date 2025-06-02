@@ -2,10 +2,13 @@ package panel;
 
 import component.MyScrollPane;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.util.ArrayList;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import objek.Task;
 import repository.TaskRepository;
 
@@ -17,8 +20,8 @@ public class TodayTask extends javax.swing.JPanel {
         
         containerPanel = new JPanel();        
         containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
-        containerPanel.setBackground(new java.awt.Color(245, 245, 245));
-
+        containerPanel.setBackground(new java.awt.Color(245, 245, 245));        
+        
         MyScrollPane scrollPane = new MyScrollPane(containerPanel);       
         scrollPane.setBounds(20, 20, 680, 400); // MENGATUR UKURAN DAN POSISI SCROLLPANE
                 
@@ -35,10 +38,11 @@ public class TodayTask extends javax.swing.JPanel {
         containerPanel.removeAll();                            
         
         for (Task task : taskList) {                        
-            TaskPanel taskPanel = new TaskPanel(task.getNama_tugas(), task.getStatus(), task.getTingkatan(), task.getWaktu(), task.getTanggal());            
-            taskPanel.setAlignmentX(Component.LEFT_ALIGNMENT);            
-            containerPanel.add(taskPanel);                        
-            containerPanel.add(Box.createVerticalStrut(5));                        
+            TaskPanel taskPanel = new TaskPanel(task.getId_tugas(), task.getId_user(), task.getNama_tugas(), task.getStatus(), task.getTingkatan(), task.getWaktu(), task.getTanggal());                        
+            taskPanel.setAlignmentX(Component.LEFT_ALIGNMENT);   
+            taskPanel.setBorder(null); // MEMASTIKAN TIDAK ADA PADDING
+            taskPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, taskPanel.getPreferredSize().height));
+            containerPanel.add(taskPanel);                                  
         }
         
         containerPanel.revalidate();

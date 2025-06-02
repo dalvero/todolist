@@ -170,6 +170,9 @@
           </Events>
         </Component>
         <Component class="component.MyCheckBox" name="chbx_status">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbx_statusActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

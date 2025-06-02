@@ -15,7 +15,7 @@ public class ToDoFrame extends javax.swing.JFrame {
     private Login login;
     private MyTask myTask;
     private TambahToDoList tambahToDoList;
-    private EditToDoList editToDoList;
+    private EditToDoList editToDoList;    
     
     public ToDoFrame() {
         setUndecorated(true);

@@ -3,6 +3,7 @@ package panel;
 
 import component.MyScrollPane;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -37,10 +38,15 @@ public class AllTask extends javax.swing.JPanel {
         containerPanel.removeAll();                            
         
         for (Task task : taskList) {                        
-            TaskPanel taskPanel = new TaskPanel(task.getNama_tugas(), task.getStatus(), task.getTingkatan(), task.getWaktu(), task.getTanggal());            
+            TaskPanel taskPanel = new TaskPanel(task.getId_tugas(), task.getId_user(), task.getNama_tugas(), task.getStatus(), task.getTingkatan(), task.getWaktu(), task.getTanggal());            
             taskPanel.setAlignmentX(Component.LEFT_ALIGNMENT);            
-            containerPanel.add(taskPanel);
-            containerPanel.add(Box.createVerticalStrut(5));
+            taskPanel.setBorder(null); // MEMASTIKAN TIDAK ADA PADDING
+            taskPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, taskPanel.getPreferredSize().height));
+            
+            
+            if (!task.getStatus().equals("Selesai")) {
+                containerPanel.add(taskPanel);
+            }                      
         }
         
         containerPanel.revalidate();
