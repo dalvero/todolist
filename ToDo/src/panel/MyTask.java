@@ -4,15 +4,12 @@ import component.MyOptionPane;
 import frame.ToDoFrame;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.Component;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import javax.swing.Box;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import repository.TaskRepository;
-import objek.Task;
+
 
 public class MyTask extends javax.swing.JPanel {
     private CardLayout cardLayout;    
@@ -22,10 +19,11 @@ public class MyTask extends javax.swing.JPanel {
     private static LocalTime now; // MENGAMBIL WAKTU SEKARANG SECARA REAL TIME
     private static DateTimeFormatter format; // FORMAT PENULISAN TANGGAL DAN WAKTU    
     
-    private static String todayDate;
+    public static String todayDate;
     
     private AllTask allTask;
     private TodayTask todayTask;
+    private CompletedTask completedTask;
     
     public MyTask() {
         initComponents();        
@@ -35,15 +33,20 @@ public class MyTask extends javax.swing.JPanel {
 
         allTask = new AllTask();
         todayTask = new TodayTask();
+        completedTask = new CompletedTask();
+        
         
         // MENAMBAHKAN PANEL-PANEL KE DALAM CARD LAYOUT
         mainPanel.add(allTask, "AllTask");
         mainPanel.add(todayTask, "TodayTask");
-        mainPanel.add(new CompletedTask(), "CompletedTask");
+        mainPanel.add(completedTask, "CompletedTask");
 
         // MENAMBAHKAN mainPanel KE LAYOUT UTAMA (DI BAGIAN TENGAH)
         this.add(mainPanel, BorderLayout.CENTER);  
         userGreeting();
+        
+        // SET BUTTON NAV TEXT
+        btn_navIcon.setText("  All Task");
         
         // SET DEFAULT CURRENT SECTION = ALL TASK
         currentSection = "All Task";
@@ -159,9 +162,11 @@ public class MyTask extends javax.swing.JPanel {
 
         l_myList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MyList.png"))); // NOI18N
         l_myList.setText("  My List");
+        l_myList.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
 
         btn_allTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/AllTasks.png"))); // NOI18N
         btn_allTask.setText(" All Tasks");
+        btn_allTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         btn_allTask.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_allTaskMouseClicked(evt);
@@ -170,6 +175,7 @@ public class MyTask extends javax.swing.JPanel {
 
         btn_todayTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Today.png"))); // NOI18N
         btn_todayTask.setText(" Today");
+        btn_todayTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         btn_todayTask.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_todayTaskMouseClicked(evt);
@@ -178,6 +184,12 @@ public class MyTask extends javax.swing.JPanel {
 
         btn_completedTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Completed.png"))); // NOI18N
         btn_completedTask.setText(" Completed");
+        btn_completedTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_completedTask.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_completedTaskMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_sideBarLayout = new javax.swing.GroupLayout(p_sideBar);
         p_sideBar.setLayout(p_sideBarLayout);
@@ -194,20 +206,20 @@ public class MyTask extends javax.swing.JPanel {
                     .addGroup(p_sideBarLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(l_myList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         p_sideBarLayout.setVerticalGroup(
             p_sideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_sideBarLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(l_myList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btn_allTask, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_todayTask, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_completedTask, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         add(p_sideBar);
@@ -220,7 +232,7 @@ public class MyTask extends javax.swing.JPanel {
         btn_addTask.setColor(java.awt.Color.black);
         btn_addTask.setColorClick(new java.awt.Color(51, 51, 51));
         btn_addTask.setColorOver(new java.awt.Color(51, 51, 51));
-        btn_addTask.setFont(new java.awt.Font("Gavoline", 1, 14)); // NOI18N
+        btn_addTask.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
         btn_addTask.setRadius(5);
         btn_addTask.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,14 +240,14 @@ public class MyTask extends javax.swing.JPanel {
             }
         });
         add(btn_addTask);
-        btn_addTask.setBounds(873, 88, 100, 34);
+        btn_addTask.setBounds(853, 88, 120, 40);
 
         l_titleTask.setText("All Task");
         l_titleTask.setColorClick(new java.awt.Color(0, 0, 0));
         l_titleTask.setColorOver(new java.awt.Color(0, 0, 0));
-        l_titleTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_titleTask.setFont(new java.awt.Font("Gavoline", 1, 24)); // NOI18N
         add(l_titleTask);
-        l_titleTask.setBounds(280, 110, 110, 18);
+        l_titleTask.setBounds(280, 98, 290, 30);
 
         t_search.setCornerRadius(15);
         t_search.addActionListener(new java.awt.event.ActionListener() {
@@ -289,14 +301,14 @@ public class MyTask extends javax.swing.JPanel {
         l_userGreet.setText("Selamat Datang");
         l_userGreet.setColorClick(new java.awt.Color(0, 0, 0));
         l_userGreet.setColorOver(new java.awt.Color(0, 0, 0));
-        l_userGreet.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_userGreet.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
         add(l_userGreet);
         l_userGreet.setBounds(50, 100, 150, 18);
 
         l_userName.setText("All Task");
         l_userName.setColorClick(new java.awt.Color(0, 0, 0));
         l_userName.setColorOver(new java.awt.Color(0, 0, 0));
-        l_userName.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_userName.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
         add(l_userName);
         l_userName.setBounds(50, 120, 110, 18);
 
@@ -311,7 +323,7 @@ public class MyTask extends javax.swing.JPanel {
     private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
         if (toDoFrame != null) {
-            toDoFrame.showHomePage();
+            toDoFrame.showMyTask();
         }
     }//GEN-LAST:event_btn_navIconMouseClicked
 
@@ -373,6 +385,14 @@ public class MyTask extends javax.swing.JPanel {
             t_search.setText("");
         }
     }//GEN-LAST:event_t_searchActionPerformed
+
+    private void btn_completedTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_completedTaskMouseClicked
+        l_titleTask.setText("Completed Task");
+        currentSection = "Completed Task";
+        System.out.println("SHOWING COMPLETED TASK PANEL");   
+        completedTask.showTask();
+        cardLayout.show(mainPanel, "CompletedTask");        
+    }//GEN-LAST:event_btn_completedTaskMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
