@@ -9,90 +9,90 @@ import panel.TambahToDoList;
 import panel.MyTask;
 
 public class ToDoFrame extends javax.swing.JFrame {
+
     // INSIALISASI PANEL
     private HomePage homePage;
     private Register register;
     private Login login;
     private MyTask myTask;
     private TambahToDoList tambahToDoList;
-    private EditToDoList editToDoList;    
-    
+    private EditToDoList editToDoList;
+
     public ToDoFrame() {
         setUndecorated(true);
         initComponents();
         myInits();
-        
     }
-    
-    public void myInits(){
+
+    public void myInits() {
         // AGAR FRAME TIDAK BISA DI RESIZE
         this.setResizable(false);
-        
+
         // SET LAYOUT UNTUK FRAME CARDLAYOUT
         getContentPane().setLayout(new CardLayout());
         showHomePage();
     }
 
     // METHOD UNTUK MENAMPILKAN HOME PAGE
-    public void showHomePage(){
+    public void showHomePage() {
         // INISIALISASI HOMEPAGE
         homePage = new HomePage();
-        getContentPane().add(homePage, "homePage");        
-                
+        getContentPane().add(homePage, "homePage");
+
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "homePage");
     }
-    
+
     // METHOD UNTUK MENAMPILKAN REGISTER
-    public void showRegister(){
+    public void showRegister() {
         // INISIALISASI REGISTER
         register = new Register();
-        getContentPane().add(register, "register");        
-                
+        getContentPane().add(register, "register");
+
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "register");
     }
-    
+
     // METHOD UNTUK MENAMPILKAN LOGIN
-    public void showLogin(){
+    public void showLogin() {
         // INISIALISASI LOGIN
         login = new Login();
-        getContentPane().add(login, "login");        
-                
+        getContentPane().add(login, "login");
+
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "login");
     }
-    
+
     // METHOD UNTUK MENAMPILKAN TASK
-    public void showMyTask(){
+    public void showMyTask() {
         // INISIALISASI TASK
         myTask = new MyTask();
-        getContentPane().add(myTask, "myTask");        
-                
+        getContentPane().add(myTask, "myTask");
+
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "myTask");
     }
-    
+
     // METHOD UNTUK MENAMPILKAN TAMBAH TASK
-    public void showTambahToDoList(){
+    public void showTambahToDoList() {
         // INISIALISASI TAMBAHTODOLIST
         tambahToDoList = new TambahToDoList();
-        getContentPane().add(tambahToDoList, "tambahToDoList");        
-                
+        getContentPane().add(tambahToDoList, "tambahToDoList");
+
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "tambahToDoList");
     }
     
     // METHOD UNTUK MENAMPILKAN EDIT TASK
-    public void showEditToDoList(){
-        // INISIALISASI TAMBAHTODOLIST
-        editToDoList = new EditToDoList();
-        getContentPane().add(editToDoList, "editToDoList");        
-                
+    public void showEditToDoList(int id_tugas) {
+        EditToDoList panelEdit = new EditToDoList(id_tugas); 
+        
+        getContentPane().add(panelEdit, "editToDoList");
+
         CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
         cardLayout.show(getContentPane(), "editToDoList");
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -115,7 +115,7 @@ public class ToDoFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {        
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ToDoFrame().setVisible(true);
