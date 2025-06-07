@@ -152,7 +152,9 @@ public class SongPanel extends javax.swing.JPanel {
 
     private void l_songTitleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_l_songTitleMouseClicked
         String judulMusik = l_songTitle.getText();
-          
+        if (pomodoro.musicPlayer.getCurrentSong() != null) {
+            pomodoro.musicPlayer.pauseSong();            
+        } 
         Song selectedSong = SongRepository.getSongByTitle(judulMusik);
         Song song = new Song(
                 selectedSong.getId_musik(), 
@@ -161,9 +163,11 @@ public class SongPanel extends javax.swing.JPanel {
                 selectedSong.getSongTitle(),
                 selectedSong.getFilePath()
         );
-                
+
         pomodoro.musicPlayer.loadSong(song);
+        pomodoro.ubahPlayJadiPause();
         pomodoro.getCurrentSong(song);
+        
     }//GEN-LAST:event_l_songTitleMouseClicked
 
 

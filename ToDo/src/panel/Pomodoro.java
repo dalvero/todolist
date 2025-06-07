@@ -31,8 +31,8 @@ public class Pomodoro extends javax.swing.JPanel {
     private boolean isMainTimer = true;
     private boolean isShortTimer = true;
     private boolean isLongTimer = true;
-    private int countSession = 0;    
-
+    private int countSession = 0;       
+    
     // SONG LIST 
     private CardLayout cardLayout;
     private SongList songList;    
@@ -68,7 +68,34 @@ public class Pomodoro extends javax.swing.JPanel {
     
     public void myInits(){
         playbackBtns.add(btn_prevSong);
-        playbackBtns.add(btn_nextSong);        
+        playbackBtns.add(btn_playSong);
+        playbackBtns.add(btn_pauseSong);
+        playbackBtns.add(btn_nextSong); 
+        
+        btn_pauseSong.setVisible(false);
+        btn_pauseSong.setEnabled(false);                
+    }
+    
+    public void ubahPauseJadiPlay(){
+        JButton playButton = (JButton) playbackBtns.getComponent(1);
+        JButton pauseButton = (JButton) playbackBtns.getComponent(2);
+        
+        pauseButton.setVisible(false);
+        pauseButton.setEnabled(false);                
+        
+        playButton.setVisible(true);
+        playButton.setEnabled(true);                
+    }
+    
+    public void ubahPlayJadiPause(){
+        JButton playButton = (JButton) playbackBtns.getComponent(1);
+        JButton pauseButton = (JButton) playbackBtns.getComponent(2);
+        
+        pauseButton.setVisible(true);
+        pauseButton.setEnabled(true);                
+        
+        playButton.setVisible(false);
+        playButton.setEnabled(false);                
     }
     
     @SuppressWarnings("unchecked")
@@ -89,19 +116,14 @@ public class Pomodoro extends javax.swing.JPanel {
         l_longBreak = new component.MyLabel();
         l_longTimer = new component.MyLabel();
         p_musicPlayer = new component.MyPanel();
-        l_songTitle = new component.MyLabel();
-        myLabel7 = new component.MyLabel();
-        myLabel5 = new component.MyLabel();
-        myLabel8 = new component.MyLabel();
-        myLabel6 = new component.MyLabel();
-        myLabel23 = new component.MyLabel();
-        myLabel24 = new component.MyLabel();
-        myLabel25 = new component.MyLabel();
-        myLabel26 = new component.MyLabel();
+        l_songArtist = new component.MyLabel();
         playbackBtns = new component.MyPanel();
-        btn_prevSong = new component.MyButton();
+        btn_playSong = new component.MyButton();
         btn_nextSong = new component.MyButton();
+        btn_prevSong = new component.MyButton();
+        btn_pauseSong = new component.MyButton();
         btn_addMusic = new component.MyButton();
+        l_songTitle = new component.MyLabel();
         navbar = new component.MyPanelCustBorder();
         btn_navIcon = new component.MyLabel();
         btn_myTask = new component.MyLabel();
@@ -260,44 +282,28 @@ public class Pomodoro extends javax.swing.JPanel {
         p_musicPlayer.setCornerRadius(13);
         p_musicPlayer.setLayout(null);
 
-        l_songTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        l_songTitle.setText("Motivation Playlist");
-        l_songTitle.setColorClick(new java.awt.Color(0, 0, 0));
-        l_songTitle.setColorOver(new java.awt.Color(0, 0, 0));
-        l_songTitle.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
-        p_musicPlayer.add(l_songTitle);
-        l_songTitle.setBounds(0, 70, 340, 20);
-        p_musicPlayer.add(myLabel7);
-        myLabel7.setBounds(162, 241, 0, 0);
-        p_musicPlayer.add(myLabel5);
-        myLabel5.setBounds(150, 182, 0, 0);
-        p_musicPlayer.add(myLabel8);
-        myLabel8.setBounds(168, 182, 0, 0);
-        p_musicPlayer.add(myLabel6);
-        myLabel6.setBounds(126, 182, 0, 0);
-        p_musicPlayer.add(myLabel23);
-        myLabel23.setBounds(39, 207, 0, 0);
-        p_musicPlayer.add(myLabel24);
-        myLabel24.setBounds(101, 207, 50, 0);
-        p_musicPlayer.add(myLabel25);
-        myLabel25.setBounds(157, 207, 50, 0);
-        p_musicPlayer.add(myLabel26);
-        myLabel26.setBounds(45, 207, 50, 0);
+        l_songArtist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_songArtist.setText("Motivation Playlist");
+        l_songArtist.setColorClick(new java.awt.Color(0, 0, 0));
+        l_songArtist.setColorOver(new java.awt.Color(0, 0, 0));
+        l_songArtist.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        p_musicPlayer.add(l_songArtist);
+        l_songArtist.setBounds(0, 160, 340, 20);
 
         playbackBtns.setBorderColor(new java.awt.Color(255, 255, 255));
         playbackBtns.setLayout(null);
 
-        btn_prevSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nextLeft40.png"))); // NOI18N
-        btn_prevSong.setBorderColor(new java.awt.Color(255, 255, 255));
-        btn_prevSong.setColor(new java.awt.Color(255, 255, 255));
-        btn_prevSong.setRadius(1000);
-        btn_prevSong.addActionListener(new java.awt.event.ActionListener() {
+        btn_playSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/play40.png"))); // NOI18N
+        btn_playSong.setBorderColor(new java.awt.Color(255, 255, 255));
+        btn_playSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_playSong.setRadius(1000);
+        btn_playSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_prevSongActionPerformed(evt);
+                btn_playSongActionPerformed(evt);
             }
         });
-        playbackBtns.add(btn_prevSong);
-        btn_prevSong.setBounds(110, 0, 46, 50);
+        playbackBtns.add(btn_playSong);
+        btn_playSong.setBounds(150, 0, 46, 50);
 
         btn_nextSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nextRight40.png"))); // NOI18N
         btn_nextSong.setBorderColor(new java.awt.Color(255, 255, 255));
@@ -309,7 +315,31 @@ public class Pomodoro extends javax.swing.JPanel {
             }
         });
         playbackBtns.add(btn_nextSong);
-        btn_nextSong.setBounds(180, 0, 46, 50);
+        btn_nextSong.setBounds(210, 0, 46, 50);
+
+        btn_prevSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nextLeft40.png"))); // NOI18N
+        btn_prevSong.setBorderColor(new java.awt.Color(255, 255, 255));
+        btn_prevSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_prevSong.setRadius(1000);
+        btn_prevSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_prevSongActionPerformed(evt);
+            }
+        });
+        playbackBtns.add(btn_prevSong);
+        btn_prevSong.setBounds(80, 0, 46, 50);
+
+        btn_pauseSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pause40.png"))); // NOI18N
+        btn_pauseSong.setBorderColor(new java.awt.Color(255, 255, 255));
+        btn_pauseSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_pauseSong.setRadius(1000);
+        btn_pauseSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pauseSongActionPerformed(evt);
+            }
+        });
+        playbackBtns.add(btn_pauseSong);
+        btn_pauseSong.setBounds(150, 0, 46, 50);
 
         p_musicPlayer.add(playbackBtns);
         playbackBtns.setBounds(0, 100, 340, 60);
@@ -330,6 +360,14 @@ public class Pomodoro extends javax.swing.JPanel {
         });
         p_musicPlayer.add(btn_addMusic);
         btn_addMusic.setBounds(220, 10, 110, 34);
+
+        l_songTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_songTitle.setText("Motivation Playlist");
+        l_songTitle.setColorClick(new java.awt.Color(0, 0, 0));
+        l_songTitle.setColorOver(new java.awt.Color(0, 0, 0));
+        l_songTitle.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        p_musicPlayer.add(l_songTitle);
+        l_songTitle.setBounds(0, 70, 340, 20);
 
         add(p_musicPlayer);
         p_musicPlayer.setBounds(569, 69, 340, 210);
@@ -740,9 +778,9 @@ public class Pomodoro extends javax.swing.JPanel {
     }
     
     public void setLabelSongTitle(String text){
-        l_songTitle.setText(text);
-        l_songTitle.revalidate();
-        l_songTitle.repaint();
+        l_songArtist.setText(text);
+        l_songArtist.revalidate();
+        l_songArtist.repaint();
     }    
     
     private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
@@ -774,7 +812,7 @@ public class Pomodoro extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_logoutMouseClicked
 
     private void btn_nextSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextSongActionPerformed
-        String currentSongTitle = l_songTitle.getText();        
+        String currentSongTitle = l_songArtist.getText();        
         Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
         if (currentSong == null) {
             return;
@@ -785,25 +823,20 @@ public class Pomodoro extends javax.swing.JPanel {
             musicPlayer.pauseSong();
             Song nextSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) + 1);
             musicPlayer.loadSong(nextSong);
-            l_songTitle.setText(nextSong.getSongTitle());   
+            l_songArtist.setText(nextSong.getSongTitle());   
         }   
     }//GEN-LAST:event_btn_nextSongActionPerformed
 
-    private void btn_prevSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prevSongActionPerformed
-        String currentSongTitle = l_songTitle.getText();
+    private void btn_playSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_playSongActionPerformed
+        String currentSongTitle = l_songArtist.getText();
         Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
         if (currentSong == null) {
             return;
-        }
-        if (SongRepository.getSongIndexPosition(currentSong) == 0) {           
-            System.out.println("Musik Ada Di Awal Playlist");            
         } else {
-            musicPlayer.pauseSong();
-            Song prevSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) - 1);
-            musicPlayer.loadSong(prevSong);
-            l_songTitle.setText(prevSong.getSongTitle());            
-        }                
-    }//GEN-LAST:event_btn_prevSongActionPerformed
+            ubahPlayJadiPause();
+            musicPlayer.playCurrentSong();
+        }        
+    }//GEN-LAST:event_btn_playSongActionPerformed
 
     private void btn_myTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_myTaskMouseClicked
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
@@ -812,6 +845,27 @@ public class Pomodoro extends javax.swing.JPanel {
             toDoFrame.showMyTask();
         }
     }//GEN-LAST:event_btn_myTaskMouseClicked
+
+    private void btn_prevSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prevSongActionPerformed
+        String currentSongTitle = l_songArtist.getText();        
+        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
+        if (currentSong == null) {
+            return;
+        }
+        if (SongRepository.getSongIndexPosition(currentSong) == 0) {           
+            System.out.println("Musik Ada Di Awal Playlist");            
+        } else {
+            musicPlayer.pauseSong();
+            Song nextSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) - 1);
+            musicPlayer.loadSong(nextSong);
+            l_songArtist.setText(nextSong.getSongTitle());   
+        } 
+    }//GEN-LAST:event_btn_prevSongActionPerformed
+
+    private void btn_pauseSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pauseSongActionPerformed
+        ubahPauseJadiPlay();
+        musicPlayer.pauseSong();
+    }//GEN-LAST:event_btn_pauseSongActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -822,6 +876,8 @@ public class Pomodoro extends javax.swing.JPanel {
     private component.MyLabel btn_navIcon;
     private component.MyButton btn_nextSong;
     private component.MyButton btn_pause;
+    private component.MyButton btn_pauseSong;
+    private component.MyButton btn_playSong;
     private component.MyLabel btn_pomodoro;
     private component.MyButton btn_prevSong;
     private javax.swing.JLabel btn_profile;
@@ -833,17 +889,10 @@ public class Pomodoro extends javax.swing.JPanel {
     private component.MyLabel l_session;
     private component.MyLabel l_shortBreak;
     private component.MyLabel l_shortTimer;
+    private component.MyLabel l_songArtist;
     private component.MyLabel l_songTitle;
     private component.MyLabel l_title;
     private component.MyLabel l_title2;
-    private component.MyLabel myLabel23;
-    private component.MyLabel myLabel24;
-    private component.MyLabel myLabel25;
-    private component.MyLabel myLabel26;
-    private component.MyLabel myLabel5;
-    private component.MyLabel myLabel6;
-    private component.MyLabel myLabel7;
-    private component.MyLabel myLabel8;
     private component.MyPanel myPanel1;
     private component.MyPanelCustBorder navbar;
     private component.MyPanelCustBorder p_footer3;
