@@ -7,6 +7,7 @@ import panel.Login;
 import panel.Register;
 import panel.TambahToDoList;
 import panel.MyTask;
+import panel.Pomodoro;
 
 public class ToDoFrame extends javax.swing.JFrame {
 
@@ -17,6 +18,7 @@ public class ToDoFrame extends javax.swing.JFrame {
     private MyTask myTask;
     private TambahToDoList tambahToDoList;
     private EditToDoList editToDoList;
+    private Pomodoro pomodoro;
 
     public ToDoFrame() {
         setUndecorated(true);
@@ -121,6 +123,16 @@ public class ToDoFrame extends javax.swing.JFrame {
                 new ToDoFrame().setVisible(true);
             }
         });
+    }
+    
+    // METHOD UNTUK MENAMPILKAN POMODORO
+    public void showPomodoro(){
+        // INISIALISASI POMODORO
+        pomodoro = new Pomodoro();
+        getContentPane().add(pomodoro, "pomodoro");        
+                
+        CardLayout cardLayout = (CardLayout) getContentPane().getLayout();
+        cardLayout.show(getContentPane(), "pomodoro");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -34,7 +34,9 @@ public class EditToDoList extends javax.swing.JPanel {
                 String tingkatanDB = rs.getString("tingkatan");
                 String waktuDB = rs.getString("waktu");
                 String tanggalDB = rs.getString("tanggal");
-
+                
+                String tanggal = tanggalDB.replace(".", ":");
+                
                 // Set nilai ke komponen
                 current_namaTugas.setText(nama);
                 current_status.setSelectedItem(statusDB);
@@ -44,7 +46,7 @@ public class EditToDoList extends javax.swing.JPanel {
                 SimpleDateFormat sdfWaktu = new SimpleDateFormat("HH:mm");
                 SimpleDateFormat sdfTanggal = new SimpleDateFormat("yyyy-MM-dd");
                 s_waktu.setValue(sdfWaktu.parse(waktuDB));
-                s_tanggal.setValue(sdfTanggal.parse(tanggalDB));
+                s_tanggal.setValue(sdfTanggal.parse(tanggal));
             }
 
             rs.close();
