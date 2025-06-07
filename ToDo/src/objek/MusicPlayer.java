@@ -1,5 +1,6 @@
 package objek;
 
+import component.MyOptionPane;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import javazoom.jl.player.advanced.AdvancedPlayer;
@@ -66,6 +67,7 @@ public class MusicPlayer extends PlaybackListener{
             startMusicThread();
         } catch (Exception e) {
             e.printStackTrace();
+            MyOptionPane.showInfo(null, "Path musik anda mungkin salah, silahkan hapus music terlebih dahulu!", "Information");
         }
     }
     

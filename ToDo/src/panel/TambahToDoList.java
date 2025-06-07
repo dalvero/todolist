@@ -159,6 +159,11 @@ public class TambahToDoList extends javax.swing.JPanel {
 
         btn_pomodoro.setText("Pomodoro");
         btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_pomodoro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_pomodoroMouseClicked(evt);
+            }
+        });
         navbar.add(btn_pomodoro);
         btn_pomodoro.setBounds(730, 20, 100, 18);
 
@@ -289,6 +294,13 @@ public class TambahToDoList extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_btn_simpanActionPerformed
+
+    private void btn_pomodoroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pomodoroMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showPomodoro();
+        }
+    }//GEN-LAST:event_btn_pomodoroMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -35,7 +35,7 @@ public class EditToDoList extends javax.swing.JPanel {
                 String waktuDB = rs.getString("waktu");
                 String tanggalDB = rs.getString("tanggal");
                 
-                String tanggal = tanggalDB.replace(".", ":");
+                String waktu = waktuDB.replace(".", ":");
                 
                 // Set nilai ke komponen
                 current_namaTugas.setText(nama);
@@ -45,8 +45,8 @@ public class EditToDoList extends javax.swing.JPanel {
                 // Format tanggal & waktu
                 SimpleDateFormat sdfWaktu = new SimpleDateFormat("HH:mm");
                 SimpleDateFormat sdfTanggal = new SimpleDateFormat("yyyy-MM-dd");
-                s_waktu.setValue(sdfWaktu.parse(waktuDB));
-                s_tanggal.setValue(sdfTanggal.parse(tanggal));
+                s_waktu.setValue(sdfWaktu.parse(waktu));
+                s_tanggal.setValue(sdfTanggal.parse(tanggalDB));
             }
 
             rs.close();
@@ -146,6 +146,11 @@ public class EditToDoList extends javax.swing.JPanel {
 
         btn_pomodoro.setText("Pomodoro");
         btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_pomodoro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_pomodoroMouseClicked(evt);
+            }
+        });
         navbar.add(btn_pomodoro);
         btn_pomodoro.setBounds(730, 20, 100, 18);
 
@@ -234,7 +239,6 @@ public class EditToDoList extends javax.swing.JPanel {
         add(s_tanggal);
         s_tanggal.setBounds(220, 480, 141, 36);
 
-        btn_batal.setBackground(new java.awt.Color(153, 0, 0));
         btn_batal.setForeground(new java.awt.Color(255, 255, 255));
         btn_batal.setText("Batal");
         btn_batal.setBorderColor(new java.awt.Color(153, 0, 0));
@@ -339,6 +343,13 @@ public class EditToDoList extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_btn_editActionPerformed
+
+    private void btn_pomodoroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pomodoroMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showPomodoro();
+        }
+    }//GEN-LAST:event_btn_pomodoroMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
