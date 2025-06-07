@@ -76,7 +76,6 @@ public class Pomodoro extends javax.swing.JPanel {
     private void initComponents() {
 
         l_title = new component.MyLabel();
-        p_footer3 = new component.MyPanelCustBorder();
         l_title2 = new component.MyLabel();
         myPanel1 = new component.MyPanel();
         btn_pause = new component.MyButton();
@@ -104,12 +103,17 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_addMusic = new component.MyButton();
         navbar = new component.MyPanelCustBorder();
         btn_navIcon = new component.MyLabel();
-        btn_myTask = new component.MyLabel();
-        btn_pomodoro = new component.MyLabel();
-        btn_logout = new component.MyLabel();
         btn_profile = new javax.swing.JLabel();
+        myPanelCustBorder1 = new component.MyPanelCustBorder();
+        btn_pomodoro = new component.MyLabel();
+        myPanelCustBorder2 = new component.MyPanelCustBorder();
+        btn_myTask = new component.MyLabel();
+        myPanelCustBorder3 = new component.MyPanelCustBorder();
+        btn_logout = new component.MyLabel();
         l_session = new component.MyLabel();
         p_songListPanel = new component.MyPanel();
+        p_footer3 = new component.MyPanelCustBorder();
+        myLabel1 = new component.MyLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
         setPreferredSize(new java.awt.Dimension(1000, 700));
@@ -122,33 +126,12 @@ public class Pomodoro extends javax.swing.JPanel {
         add(l_title);
         l_title.setBounds(153, 121, 380, 70);
 
-        p_footer3.setBorderBottom(false);
-        p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
-        p_footer3.setBorderLeft(false);
-        p_footer3.setBorderRight(false);
-        p_footer3.setBorderTop(false);
-        p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
-
-        javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
-        p_footer3.setLayout(p_footer3Layout);
-        p_footer3Layout.setHorizontalGroup(
-            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        p_footer3Layout.setVerticalGroup(
-            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        add(p_footer3);
-        p_footer3.setBounds(0, 650, 1000, 50);
-
         l_title2.setText("Timer");
         l_title2.setColorClick(new java.awt.Color(0, 0, 0));
         l_title2.setColorOver(new java.awt.Color(0, 0, 0));
         l_title2.setFont(new java.awt.Font("Gavoline", 0, 48)); // NOI18N
         add(l_title2);
-        l_title2.setBounds(160, 210, 134, 47);
+        l_title2.setBounds(160, 210, 140, 47);
 
         myPanel1.setBorderColor(new java.awt.Color(255, 255, 255));
         myPanel1.setCornerRadius(13);
@@ -237,11 +220,15 @@ public class Pomodoro extends javax.swing.JPanel {
 
         l_shortBreak.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         l_shortBreak.setText("Short Break");
+        l_shortBreak.setColorClick(new java.awt.Color(0, 0, 0));
+        l_shortBreak.setColorOver(new java.awt.Color(0, 0, 0));
         l_shortBreak.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         myPanel1.add(l_shortBreak);
         l_shortBreak.setBounds(2, 80, 130, 18);
 
         l_longBreak.setText("Long Break");
+        l_longBreak.setColorClick(new java.awt.Color(0, 0, 0));
+        l_longBreak.setColorOver(new java.awt.Color(0, 0, 0));
         l_longBreak.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         myPanel1.add(l_longBreak);
         l_longBreak.setBounds(260, 80, 120, 18);
@@ -319,7 +306,7 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_addMusic.setText("Add Music");
         btn_addMusic.setBorderColor(new java.awt.Color(0, 0, 0));
         btn_addMusic.setColor(java.awt.Color.black);
-        btn_addMusic.setColorClick(new java.awt.Color(51, 51, 51));
+        btn_addMusic.setColorClick(new java.awt.Color(102, 102, 102));
         btn_addMusic.setColorOver(new java.awt.Color(51, 51, 51));
         btn_addMusic.setFont(new java.awt.Font("Gavoline", 1, 14)); // NOI18N
         btn_addMusic.setRadius(5);
@@ -355,15 +342,13 @@ public class Pomodoro extends javax.swing.JPanel {
         navbar.add(btn_navIcon);
         btn_navIcon.setBounds(36, 4, 130, 40);
 
-        btn_myTask.setText("My Task");
-        btn_myTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
-        btn_myTask.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_myTaskMouseClicked(evt);
-            }
-        });
-        navbar.add(btn_myTask);
-        btn_myTask.setBounds(630, 20, 80, 18);
+        btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
+        navbar.add(btn_profile);
+        btn_profile.setBounds(940, 10, 30, 30);
+
+        myPanelCustBorder1.setBorderLeft(false);
+        myPanelCustBorder1.setBorderRight(false);
+        myPanelCustBorder1.setBorderTop(false);
 
         btn_pomodoro.setText("Pomodoro");
         btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
@@ -372,8 +357,63 @@ public class Pomodoro extends javax.swing.JPanel {
                 btn_pomodoroMouseClicked(evt);
             }
         });
-        navbar.add(btn_pomodoro);
-        btn_pomodoro.setBounds(730, 20, 100, 18);
+
+        javax.swing.GroupLayout myPanelCustBorder1Layout = new javax.swing.GroupLayout(myPanelCustBorder1);
+        myPanelCustBorder1.setLayout(myPanelCustBorder1Layout);
+        myPanelCustBorder1Layout.setHorizontalGroup(
+            myPanelCustBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myPanelCustBorder1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_pomodoro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        myPanelCustBorder1Layout.setVerticalGroup(
+            myPanelCustBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_pomodoro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navbar.add(myPanelCustBorder1);
+        myPanelCustBorder1.setBounds(740, 10, 90, 30);
+
+        myPanelCustBorder2.setBorderBottom(false);
+        myPanelCustBorder2.setBorderLeft(false);
+        myPanelCustBorder2.setBorderRight(false);
+        myPanelCustBorder2.setBorderTop(false);
+
+        btn_myTask.setText("My Task");
+        btn_myTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_myTask.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_myTaskMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout myPanelCustBorder2Layout = new javax.swing.GroupLayout(myPanelCustBorder2);
+        myPanelCustBorder2.setLayout(myPanelCustBorder2Layout);
+        myPanelCustBorder2Layout.setHorizontalGroup(
+            myPanelCustBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myPanelCustBorder2Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(btn_myTask, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+        myPanelCustBorder2Layout.setVerticalGroup(
+            myPanelCustBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myPanelCustBorder2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_myTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        navbar.add(myPanelCustBorder2);
+        myPanelCustBorder2.setBounds(630, 10, 100, 30);
+
+        myPanelCustBorder3.setBorderBottom(false);
+        myPanelCustBorder3.setBorderLeft(false);
+        myPanelCustBorder3.setBorderRight(false);
+        myPanelCustBorder3.setBorderTop(false);
 
         btn_logout.setText("Logout");
         btn_logout.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
@@ -382,12 +422,26 @@ public class Pomodoro extends javax.swing.JPanel {
                 btn_logoutMouseClicked(evt);
             }
         });
-        navbar.add(btn_logout);
-        btn_logout.setBounds(850, 20, 70, 18);
 
-        btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
-        navbar.add(btn_profile);
-        btn_profile.setBounds(940, 10, 30, 30);
+        javax.swing.GroupLayout myPanelCustBorder3Layout = new javax.swing.GroupLayout(myPanelCustBorder3);
+        myPanelCustBorder3.setLayout(myPanelCustBorder3Layout);
+        myPanelCustBorder3Layout.setHorizontalGroup(
+            myPanelCustBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        myPanelCustBorder3Layout.setVerticalGroup(
+            myPanelCustBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navbar.add(myPanelCustBorder3);
+        myPanelCustBorder3.setBounds(840, 10, 70, 30);
 
         add(navbar);
         navbar.setBounds(0, 0, 1000, 50);
@@ -416,6 +470,37 @@ public class Pomodoro extends javax.swing.JPanel {
 
         add(p_songListPanel);
         p_songListPanel.setBounds(570, 290, 340, 330);
+
+        p_footer3.setBorderBottom(false);
+        p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
+        p_footer3.setBorderLeft(false);
+        p_footer3.setBorderRight(false);
+        p_footer3.setBorderTop(false);
+        p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        myLabel1.setText("@copyrighttodolist2025");
+        myLabel1.setColorClick(new java.awt.Color(0, 0, 0));
+        myLabel1.setColorOver(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
+        p_footer3.setLayout(p_footer3Layout);
+        p_footer3Layout.setHorizontalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(434, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(430, 430, 430))
+        );
+        p_footer3Layout.setVerticalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+
+        add(p_footer3);
+        p_footer3.setBounds(0, 650, 1000, 50);
     }// </editor-fold>//GEN-END:initComponents
     
     // MAIN TIMER
@@ -836,6 +921,7 @@ public class Pomodoro extends javax.swing.JPanel {
     private component.MyLabel l_songTitle;
     private component.MyLabel l_title;
     private component.MyLabel l_title2;
+    private component.MyLabel myLabel1;
     private component.MyLabel myLabel23;
     private component.MyLabel myLabel24;
     private component.MyLabel myLabel25;
@@ -845,6 +931,9 @@ public class Pomodoro extends javax.swing.JPanel {
     private component.MyLabel myLabel7;
     private component.MyLabel myLabel8;
     private component.MyPanel myPanel1;
+    private component.MyPanelCustBorder myPanelCustBorder1;
+    private component.MyPanelCustBorder myPanelCustBorder2;
+    private component.MyPanelCustBorder myPanelCustBorder3;
     private component.MyPanelCustBorder navbar;
     private component.MyPanelCustBorder p_footer3;
     private component.MyPanel p_musicPlayer;

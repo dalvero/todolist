@@ -68,7 +68,6 @@ public class EditToDoList extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        footer1 = new component.MyPanelCustBorder();
         navbar = new component.MyPanelCustBorder();
         btn_navIcon = new component.MyLabel();
         btn_myTask = new component.MyLabel();
@@ -89,29 +88,11 @@ public class EditToDoList extends javax.swing.JPanel {
         s_tanggal = new component.MySpinnerDate();
         btn_batal = new component.MyButton();
         btn_edit = new component.MyButton();
+        p_footer3 = new component.MyPanelCustBorder();
+        myLabel1 = new component.MyLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
         setLayout(null);
-
-        footer1.setBorderBottom(false);
-        footer1.setBorderLeft(false);
-        footer1.setBorderRight(false);
-        footer1.setBorderTop(false);
-        footer1.setPreferredSize(new java.awt.Dimension(100, 50));
-
-        javax.swing.GroupLayout footer1Layout = new javax.swing.GroupLayout(footer1);
-        footer1.setLayout(footer1Layout);
-        footer1Layout.setHorizontalGroup(
-            footer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        footer1Layout.setVerticalGroup(
-            footer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        add(footer1);
-        footer1.setBounds(0, 650, 1000, 50);
 
         navbar.setBorderBottom(false);
         navbar.setBorderColor(new java.awt.Color(102, 102, 102));
@@ -171,7 +152,7 @@ public class EditToDoList extends javax.swing.JPanel {
         l_namaTugas.setColorOver(new java.awt.Color(0, 0, 0));
         l_namaTugas.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         add(l_namaTugas);
-        l_namaTugas.setBounds(220, 150, 102, 18);
+        l_namaTugas.setBounds(220, 150, 110, 18);
 
         current_namaTugas.setCornerRadius(10);
         current_namaTugas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -203,7 +184,7 @@ public class EditToDoList extends javax.swing.JPanel {
         l_tingkatan.setColorOver(new java.awt.Color(0, 0, 0));
         l_tingkatan.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         add(l_tingkatan);
-        l_tingkatan.setBounds(220, 300, 81, 18);
+        l_tingkatan.setBounds(220, 300, 90, 18);
 
         p_tingkatan.setBorderWidth(1);
         p_tingkatan.setCornerRadius(20);
@@ -223,21 +204,22 @@ public class EditToDoList extends javax.swing.JPanel {
         l_waktu.setColorOver(new java.awt.Color(0, 0, 0));
         l_waktu.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         add(l_waktu);
-        l_waktu.setBounds(220, 390, 52, 18);
+        l_waktu.setBounds(220, 390, 60, 18);
         add(s_waktu);
         s_waktu.setBounds(220, 410, 106, 36);
 
         l_tanggal.setText("Tanggal");
+        l_tanggal.setColorClick(new java.awt.Color(0, 0, 0));
+        l_tanggal.setColorOver(new java.awt.Color(0, 0, 0));
         l_tanggal.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
         add(l_tanggal);
         l_tanggal.setBounds(220, 460, 90, 18);
         add(s_tanggal);
         s_tanggal.setBounds(220, 480, 141, 36);
 
-        btn_batal.setBackground(new java.awt.Color(153, 0, 0));
         btn_batal.setForeground(new java.awt.Color(255, 255, 255));
         btn_batal.setText("Batal");
-        btn_batal.setBorderColor(new java.awt.Color(153, 0, 0));
+        btn_batal.setBorderColor(new java.awt.Color(0, 0, 0));
         btn_batal.setColor(java.awt.Color.black);
         btn_batal.setColorClick(new java.awt.Color(51, 51, 51));
         btn_batal.setColorOver(new java.awt.Color(51, 51, 51));
@@ -267,6 +249,37 @@ public class EditToDoList extends javax.swing.JPanel {
         });
         add(btn_edit);
         btn_edit.setBounds(660, 540, 137, 39);
+
+        p_footer3.setBorderBottom(false);
+        p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
+        p_footer3.setBorderLeft(false);
+        p_footer3.setBorderRight(false);
+        p_footer3.setBorderTop(false);
+        p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        myLabel1.setText("@copyrighttodolist2025");
+        myLabel1.setColorClick(new java.awt.Color(0, 0, 0));
+        myLabel1.setColorOver(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
+        p_footer3.setLayout(p_footer3Layout);
+        p_footer3Layout.setHorizontalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(434, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(430, 430, 430))
+        );
+        p_footer3Layout.setVerticalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+
+        add(p_footer3);
+        p_footer3.setBounds(0, 650, 1000, 50);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
@@ -352,13 +365,14 @@ public class EditToDoList extends javax.swing.JPanel {
     private component.MyTextFieldCustBorder current_namaTugas;
     private component.MyComboBox current_status;
     private component.MyComboBox current_tingkatan;
-    private component.MyPanelCustBorder footer1;
     private component.MyLabel l_namaTugas;
     private component.MyLabel l_status;
     private component.MyLabel l_tanggal;
     private component.MyLabel l_tingkatan;
     private component.MyLabel l_waktu;
+    private component.MyLabel myLabel1;
     private component.MyPanelCustBorder navbar;
+    private component.MyPanelCustBorder p_footer3;
     private component.MyPanel p_status;
     private component.MyPanel p_tingkatan;
     private component.MySpinnerDate s_tanggal;

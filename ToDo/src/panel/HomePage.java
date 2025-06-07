@@ -22,6 +22,7 @@ public class HomePage extends javax.swing.JPanel {
         l_text2 = new component.MyLabel();
         l_text3 = new component.MyLabel();
         p_footer3 = new component.MyPanelCustBorder();
+        myLabel1 = new component.MyLabel();
         navbar = new component.MyPanelCustBorder();
         navIcon = new component.MyLabel();
         btn_login = new component.MyButton();
@@ -70,7 +71,7 @@ public class HomePage extends javax.swing.JPanel {
         l_title.setColorOver(new java.awt.Color(0, 0, 0));
         l_title.setFont(new java.awt.Font("Gavoline", 0, 72)); // NOI18N
         add(l_title);
-        l_title.setBounds(140, 270, 333, 70);
+        l_title.setBounds(140, 270, 340, 70);
 
         l_text1.setText("Solusi manajemen aktivitas sehari-hari");
         l_text1.setColorClick(new java.awt.Color(0, 0, 0));
@@ -100,15 +101,25 @@ public class HomePage extends javax.swing.JPanel {
         p_footer3.setBorderTop(false);
         p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
 
+        myLabel1.setText("@copyrighttodolist2025");
+        myLabel1.setColorClick(new java.awt.Color(0, 0, 0));
+        myLabel1.setColorOver(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
         p_footer3.setLayout(p_footer3Layout);
         p_footer3Layout.setHorizontalGroup(
             p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(434, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(430, 430, 430))
         );
         p_footer3Layout.setVerticalGroup(
             p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         add(p_footer3);
@@ -137,7 +148,7 @@ public class HomePage extends javax.swing.JPanel {
 
         btn_login.setForeground(new java.awt.Color(0, 0, 0));
         btn_login.setText("Login");
-        btn_login.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_login.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_login.setColor(new java.awt.Color(245, 245, 245));
         btn_login.setColorClick(new java.awt.Color(220, 220, 220));
         btn_login.setColorOver(new java.awt.Color(250, 250, 250));
@@ -153,7 +164,7 @@ public class HomePage extends javax.swing.JPanel {
 
         btn_register.setForeground(new java.awt.Color(0, 0, 0));
         btn_register.setText("Register");
-        btn_register.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_register.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_register.setColor(new java.awt.Color(245, 245, 245));
         btn_register.setColorClick(new java.awt.Color(220, 220, 220));
         btn_register.setColorOver(new java.awt.Color(250, 250, 250));
@@ -250,6 +261,7 @@ public class HomePage extends javax.swing.JPanel {
     private component.MyLabel l_text3;
     private component.MyLabel l_title;
     private component.MyLabel l_titleCircle;
+    private component.MyLabel myLabel1;
     private component.MyLabel navIcon;
     private component.MyPanelCustBorder navbar;
     private component.MyPanel p_circle;

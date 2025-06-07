@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.SwingUtilities;
+import objek.MusicPlayer;
 import repository.TaskRepository;
 
 
@@ -87,10 +88,13 @@ public class MyTask extends javax.swing.JPanel {
 
         navbar = new component.MyPanelCustBorder();
         btn_navIcon = new component.MyLabel();
-        btn_myTask = new component.MyLabel();
-        btn_pomodoro = new component.MyLabel();
-        btn_logout = new component.MyLabel();
         btn_profile = new javax.swing.JLabel();
+        myPanelCustBorder1 = new component.MyPanelCustBorder();
+        btn_myTask = new component.MyLabel();
+        myPanelCustBorder2 = new component.MyPanelCustBorder();
+        btn_pomodoro = new component.MyLabel();
+        myPanelCustBorder3 = new component.MyPanelCustBorder();
+        btn_logout = new component.MyLabel();
         p_sideBar = new component.MyPanel();
         l_myList = new component.MyLabel();
         btn_allTask = new component.MyLabel();
@@ -130,10 +134,40 @@ public class MyTask extends javax.swing.JPanel {
         navbar.add(btn_navIcon);
         btn_navIcon.setBounds(36, 4, 130, 40);
 
+        btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
+        navbar.add(btn_profile);
+        btn_profile.setBounds(940, 10, 30, 30);
+
+        myPanelCustBorder1.setBorderLeft(false);
+        myPanelCustBorder1.setBorderRight(false);
+        myPanelCustBorder1.setBorderTop(false);
+
         btn_myTask.setText("My Task");
         btn_myTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
-        navbar.add(btn_myTask);
-        btn_myTask.setBounds(630, 20, 80, 18);
+
+        javax.swing.GroupLayout myPanelCustBorder1Layout = new javax.swing.GroupLayout(myPanelCustBorder1);
+        myPanelCustBorder1.setLayout(myPanelCustBorder1Layout);
+        myPanelCustBorder1Layout.setHorizontalGroup(
+            myPanelCustBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myPanelCustBorder1Layout.createSequentialGroup()
+                .addGap(0, 3, Short.MAX_VALUE)
+                .addComponent(btn_myTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        myPanelCustBorder1Layout.setVerticalGroup(
+            myPanelCustBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_myTask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navbar.add(myPanelCustBorder1);
+        myPanelCustBorder1.setBounds(650, 10, 70, 30);
+
+        myPanelCustBorder2.setBorderBottom(false);
+        myPanelCustBorder2.setBorderLeft(false);
+        myPanelCustBorder2.setBorderRight(false);
+        myPanelCustBorder2.setBorderTop(false);
 
         btn_pomodoro.setText("Pomodoro");
         btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
@@ -142,8 +176,31 @@ public class MyTask extends javax.swing.JPanel {
                 btn_pomodoroMouseClicked(evt);
             }
         });
-        navbar.add(btn_pomodoro);
-        btn_pomodoro.setBounds(730, 20, 100, 18);
+
+        javax.swing.GroupLayout myPanelCustBorder2Layout = new javax.swing.GroupLayout(myPanelCustBorder2);
+        myPanelCustBorder2.setLayout(myPanelCustBorder2Layout);
+        myPanelCustBorder2Layout.setHorizontalGroup(
+            myPanelCustBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_pomodoro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        myPanelCustBorder2Layout.setVerticalGroup(
+            myPanelCustBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_pomodoro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navbar.add(myPanelCustBorder2);
+        myPanelCustBorder2.setBounds(730, 10, 100, 30);
+
+        myPanelCustBorder3.setBorderBottom(false);
+        myPanelCustBorder3.setBorderLeft(false);
+        myPanelCustBorder3.setBorderRight(false);
+        myPanelCustBorder3.setBorderTop(false);
 
         btn_logout.setText("Logout");
         btn_logout.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
@@ -152,12 +209,26 @@ public class MyTask extends javax.swing.JPanel {
                 btn_logoutMouseClicked(evt);
             }
         });
-        navbar.add(btn_logout);
-        btn_logout.setBounds(850, 20, 70, 18);
 
-        btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
-        navbar.add(btn_profile);
-        btn_profile.setBounds(940, 10, 30, 30);
+        javax.swing.GroupLayout myPanelCustBorder3Layout = new javax.swing.GroupLayout(myPanelCustBorder3);
+        myPanelCustBorder3.setLayout(myPanelCustBorder3Layout);
+        myPanelCustBorder3Layout.setHorizontalGroup(
+            myPanelCustBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        myPanelCustBorder3Layout.setVerticalGroup(
+            myPanelCustBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        navbar.add(myPanelCustBorder3);
+        myPanelCustBorder3.setBounds(840, 10, 72, 30);
 
         add(navbar);
         navbar.setBounds(0, 0, 1000, 50);
@@ -167,6 +238,8 @@ public class MyTask extends javax.swing.JPanel {
 
         l_myList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/MyList.png"))); // NOI18N
         l_myList.setText("  My List");
+        l_myList.setColorClick(new java.awt.Color(0, 0, 0));
+        l_myList.setColorOver(new java.awt.Color(0, 0, 0));
         l_myList.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
 
         btn_allTask.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/AllTasks.png"))); // NOI18N
@@ -315,7 +388,7 @@ public class MyTask extends javax.swing.JPanel {
         l_userName.setColorOver(new java.awt.Color(0, 0, 0));
         l_userName.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
         add(l_userName);
-        l_userName.setBounds(50, 120, 110, 18);
+        l_userName.setBounds(50, 120, 200, 18);
 
         l_date.setText("DD/MM/YYYY");
         l_date.setColorClick(new java.awt.Color(0, 0, 0));
@@ -325,32 +398,12 @@ public class MyTask extends javax.swing.JPanel {
         l_date.setBounds(50, 160, 210, 18);
     }// </editor-fold>//GEN-END:initComponents
     
-    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
-        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-        if (toDoFrame != null) {
-            toDoFrame.showMyTask();
-        }
-    }//GEN-LAST:event_btn_navIconMouseClicked
-
     private void btn_addTaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addTaskActionPerformed
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
         if (toDoFrame != null) {
             toDoFrame.showTambahToDoList();
         }
     }//GEN-LAST:event_btn_addTaskActionPerformed
-
-    private void btn_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseClicked
-        MyOptionPane.showConfirm(this, "Yakin ingin logout dari akun anda?", "Konfirmasi", result -> {
-            if (result) {
-                ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-                if (toDoFrame != null) {
-                    toDoFrame.showHomePage();
-                }
-            } else {
-                System.out.println("Batal Logout.");
-            }
-        });
-    }//GEN-LAST:event_btn_logoutMouseClicked
 
     private void btn_allTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_allTaskMouseClicked
         l_titleTask.setText("All Task");
@@ -399,12 +452,32 @@ public class MyTask extends javax.swing.JPanel {
         cardLayout.show(mainPanel, "CompletedTask");        
     }//GEN-LAST:event_btn_completedTaskMouseClicked
 
+    private void btn_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseClicked
+        MyOptionPane.showConfirm(this, "Yakin ingin logout dari akun anda?", "Konfirmasi", result -> {
+            if (result) {
+                ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+                if (toDoFrame != null) {
+                    toDoFrame.showHomePage();
+                }
+            } else {
+                System.out.println("Batal Logout.");
+            }
+        });
+    }//GEN-LAST:event_btn_logoutMouseClicked
+
     private void btn_pomodoroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pomodoroMouseClicked
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
         if (toDoFrame != null) {
             toDoFrame.showPomodoro();
         }
     }//GEN-LAST:event_btn_pomodoroMouseClicked
+
+    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showMyTask();
+        }
+    }//GEN-LAST:event_btn_navIconMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -424,6 +497,9 @@ public class MyTask extends javax.swing.JPanel {
     private component.MyLabel l_userGreet;
     private component.MyLabel l_userName;
     private component.MyPanelCustBorder mainPanel;
+    private component.MyPanelCustBorder myPanelCustBorder1;
+    private component.MyPanelCustBorder myPanelCustBorder2;
+    private component.MyPanelCustBorder myPanelCustBorder3;
     private component.MyPanelCustBorder navbar;
     private component.MyPanel p_sideBar;
     private component.MyTextFieldCustBorder t_search;

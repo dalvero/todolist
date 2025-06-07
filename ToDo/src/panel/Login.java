@@ -24,7 +24,6 @@ public class Login extends javax.swing.JPanel {
         btn_register = new component.MyButton();
         btn_close = new component.MyButton();
         btn_minimize = new component.MyButton();
-        p_footer = new component.MyPanelCustBorder();
         p_registerForm4 = new component.MyPanel();
         p_circle4 = new component.MyPanel();
         l_circleTitle4 = new component.MyLabel();
@@ -38,6 +37,8 @@ public class Login extends javax.swing.JPanel {
         btn_registerForm = new component.MyLabel();
         l_usernameIcon = new component.MyLabel();
         l_passwordIcon = new component.MyLabel();
+        p_footer3 = new component.MyPanelCustBorder();
+        myLabel1 = new component.MyLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
         setPreferredSize(new java.awt.Dimension(1000, 700));
@@ -66,7 +67,7 @@ public class Login extends javax.swing.JPanel {
 
         btn_login.setForeground(new java.awt.Color(0, 0, 0));
         btn_login.setText("Login");
-        btn_login.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_login.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_login.setColor(new java.awt.Color(245, 245, 245));
         btn_login.setColorClick(new java.awt.Color(220, 220, 220));
         btn_login.setColorOver(new java.awt.Color(250, 250, 250));
@@ -82,7 +83,7 @@ public class Login extends javax.swing.JPanel {
 
         btn_register.setForeground(new java.awt.Color(0, 0, 0));
         btn_register.setText("Register");
-        btn_register.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_register.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_register.setColor(new java.awt.Color(245, 245, 245));
         btn_register.setColorClick(new java.awt.Color(220, 220, 220));
         btn_register.setColorOver(new java.awt.Color(250, 250, 250));
@@ -128,27 +129,6 @@ public class Login extends javax.swing.JPanel {
 
         add(navbar);
         navbar.setBounds(0, 0, 1000, 90);
-
-        p_footer.setBorderBottom(false);
-        p_footer.setBorderColor(new java.awt.Color(102, 102, 102));
-        p_footer.setBorderLeft(false);
-        p_footer.setBorderRight(false);
-        p_footer.setBorderTop(false);
-        p_footer.setPreferredSize(new java.awt.Dimension(100, 50));
-
-        javax.swing.GroupLayout p_footerLayout = new javax.swing.GroupLayout(p_footer);
-        p_footer.setLayout(p_footerLayout);
-        p_footerLayout.setHorizontalGroup(
-            p_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 998, Short.MAX_VALUE)
-        );
-        p_footerLayout.setVerticalGroup(
-            p_footerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        add(p_footer);
-        p_footer.setBounds(0, 650, 998, 50);
 
         p_registerForm4.setBorderWidth(1);
         p_registerForm4.setCornerRadius(30);
@@ -217,7 +197,7 @@ public class Login extends javax.swing.JPanel {
         btn_loginForm.setBorderColor(new java.awt.Color(0, 0, 0));
         btn_loginForm.setColor(new java.awt.Color(0, 0, 0));
         btn_loginForm.setColorClick(new java.awt.Color(102, 102, 102));
-        btn_loginForm.setColorOver(new java.awt.Color(153, 153, 153));
+        btn_loginForm.setColorOver(new java.awt.Color(51, 51, 51));
         btn_loginForm.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
         btn_loginForm.setRadius(15);
         btn_loginForm.addActionListener(new java.awt.event.ActionListener() {
@@ -266,7 +246,7 @@ public class Login extends javax.swing.JPanel {
                                     .addComponent(l_usernameIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                                     .addComponent(l_passwordIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)))))
                     .addGroup(p_registerForm4Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
+                        .addGap(94, 94, 94)
                         .addComponent(l_belumPunyaAkun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_registerForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -309,6 +289,37 @@ public class Login extends javax.swing.JPanel {
 
         add(p_registerForm4);
         p_registerForm4.setBounds(280, 130, 426, 466);
+
+        p_footer3.setBorderBottom(false);
+        p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
+        p_footer3.setBorderLeft(false);
+        p_footer3.setBorderRight(false);
+        p_footer3.setBorderTop(false);
+        p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        myLabel1.setText("@copyrighttodolist2025");
+        myLabel1.setColorClick(new java.awt.Color(0, 0, 0));
+        myLabel1.setColorOver(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
+        p_footer3.setLayout(p_footer3Layout);
+        p_footer3Layout.setHorizontalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(434, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(430, 430, 430))
+        );
+        p_footer3Layout.setVerticalGroup(
+            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_footer3Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(myLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+        );
+
+        add(p_footer3);
+        p_footer3.setBounds(0, 650, 1000, 50);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_registerFormMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_registerFormMouseClicked
@@ -409,10 +420,11 @@ public class Login extends javax.swing.JPanel {
     private component.MyLabel l_titleForm;
     private component.MyLabel l_username;
     private component.MyLabel l_usernameIcon;
+    private component.MyLabel myLabel1;
     private component.MyLabel navIcon;
     private component.MyPanelCustBorder navbar;
     private component.MyPanel p_circle4;
-    private component.MyPanelCustBorder p_footer;
+    private component.MyPanelCustBorder p_footer3;
     private component.MyPanel p_registerForm4;
     private component.MyPasswordField t_password;
     private component.MyTextFieldCustBorder t_username;
