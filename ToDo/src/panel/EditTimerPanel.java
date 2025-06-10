@@ -34,23 +34,23 @@ public class EditTimerPanel extends javax.swing.JPanel {
         l_editTimerTitle.setText("Edit your timer");
         l_editTimerTitle.setColorClick(new java.awt.Color(0, 0, 0));
         l_editTimerTitle.setColorOver(new java.awt.Color(0, 0, 0));
-        l_editTimerTitle.setFont(new java.awt.Font("Gavoline", 1, 36)); // NOI18N
+        l_editTimerTitle.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         add(l_editTimerTitle);
-        l_editTimerTitle.setBounds(5, 35, 370, 36);
+        l_editTimerTitle.setBounds(5, 35, 370, 47);
 
         l_longBreak.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         l_longBreak.setText("Long Break");
         l_longBreak.setColorClick(new java.awt.Color(0, 0, 0));
         l_longBreak.setColorOver(new java.awt.Color(0, 0, 0));
-        l_longBreak.setFont(new java.awt.Font("Gavoline", 1, 24)); // NOI18N
+        l_longBreak.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         add(l_longBreak);
-        l_longBreak.setBounds(10, 270, 360, 24);
+        l_longBreak.setBounds(10, 260, 360, 32);
 
         l_mainTimer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         l_mainTimer.setText("Main Timer");
         l_mainTimer.setColorClick(new java.awt.Color(0, 0, 0));
         l_mainTimer.setColorOver(new java.awt.Color(0, 0, 0));
-        l_mainTimer.setFont(new java.awt.Font("Gavoline", 1, 24)); // NOI18N
+        l_mainTimer.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         add(l_mainTimer);
         l_mainTimer.setBounds(10, 90, 360, 30);
 
@@ -58,7 +58,7 @@ public class EditTimerPanel extends javax.swing.JPanel {
         l_shortBreak.setText("Short Break");
         l_shortBreak.setColorClick(new java.awt.Color(0, 0, 0));
         l_shortBreak.setColorOver(new java.awt.Color(0, 0, 0));
-        l_shortBreak.setFont(new java.awt.Font("Gavoline", 1, 24)); // NOI18N
+        l_shortBreak.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         add(l_shortBreak);
         l_shortBreak.setBounds(10, 180, 360, 30);
 
@@ -69,7 +69,7 @@ public class EditTimerPanel extends javax.swing.JPanel {
         btn_save.setColor(new java.awt.Color(245, 245, 245));
         btn_save.setColorClick(new java.awt.Color(220, 220, 220));
         btn_save.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_save.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
+        btn_save.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         btn_save.setRadius(15);
         btn_save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

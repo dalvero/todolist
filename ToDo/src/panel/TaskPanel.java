@@ -107,17 +107,17 @@ public class TaskPanel extends javax.swing.JPanel {
         l_taskTitle.setText("Finish Project Proposal");
         l_taskTitle.setColorClick(new java.awt.Color(0, 0, 0));
         l_taskTitle.setColorOver(new java.awt.Color(0, 0, 0));
-        l_taskTitle.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        l_taskTitle.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
 
         l_tanggalTask.setText("Due: 22 May, 2025");
         l_tanggalTask.setColorClick(new java.awt.Color(0, 0, 0));
         l_tanggalTask.setColorOver(new java.awt.Color(0, 0, 0));
-        l_tanggalTask.setFont(new java.awt.Font("Gavoline", 0, 14)); // NOI18N
+        l_tanggalTask.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
         l_taskTingkatan.setText("Status");
         l_taskTingkatan.setColorClick(new java.awt.Color(0, 0, 0));
         l_taskTingkatan.setColorOver(new java.awt.Color(0, 0, 0));
-        l_taskTingkatan.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_taskTingkatan.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
 
         btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/edit.png"))); // NOI18N
         btn_edit.setRadius(1000);
@@ -143,6 +143,7 @@ public class TaskPanel extends javax.swing.JPanel {
             }
         });
 
+        chbx_status.setCornerRadius(100);
         chbx_status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chbx_statusActionPerformed(evt);

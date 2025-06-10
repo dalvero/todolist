@@ -79,30 +79,30 @@ public class TambahToDoList extends javax.swing.JPanel {
         l_namaTugas.setText("Nama Tugas");
         l_namaTugas.setColorClick(new java.awt.Color(0, 0, 0));
         l_namaTugas.setColorOver(new java.awt.Color(0, 0, 0));
-        l_namaTugas.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_namaTugas.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         add(l_namaTugas);
-        l_namaTugas.setBounds(230, 210, 102, 18);
+        l_namaTugas.setBounds(230, 210, 120, 24);
 
         l_status.setText("Status");
         l_status.setColorClick(new java.awt.Color(0, 0, 0));
         l_status.setColorOver(new java.awt.Color(0, 0, 0));
-        l_status.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_status.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         add(l_status);
-        l_status.setBounds(230, 280, 52, 18);
+        l_status.setBounds(230, 280, 51, 24);
 
         l_tingkatan.setText("Tingkatan");
         l_tingkatan.setColorClick(new java.awt.Color(0, 0, 0));
         l_tingkatan.setColorOver(new java.awt.Color(0, 0, 0));
-        l_tingkatan.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_tingkatan.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         add(l_tingkatan);
-        l_tingkatan.setBounds(230, 360, 81, 18);
+        l_tingkatan.setBounds(230, 360, 100, 24);
 
         l_waktu.setText("Waktu");
         l_waktu.setColorClick(new java.awt.Color(0, 0, 0));
         l_waktu.setColorOver(new java.awt.Color(0, 0, 0));
-        l_waktu.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_waktu.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         add(l_waktu);
-        l_waktu.setBounds(230, 450, 52, 18);
+        l_waktu.setBounds(230, 450, 60, 24);
 
         btn_simpan.setBackground(new java.awt.Color(0, 0, 0));
         btn_simpan.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,7 +111,7 @@ public class TambahToDoList extends javax.swing.JPanel {
         btn_simpan.setColor(java.awt.Color.black);
         btn_simpan.setColorClick(new java.awt.Color(51, 51, 51));
         btn_simpan.setColorOver(new java.awt.Color(51, 51, 51));
-        btn_simpan.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
+        btn_simpan.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         btn_simpan.setRadius(5);
         btn_simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,9 +122,9 @@ public class TambahToDoList extends javax.swing.JPanel {
         btn_simpan.setBounds(670, 580, 137, 39);
 
         l_tanggal.setText("Tanggal");
-        l_tanggal.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_tanggal.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         add(l_tanggal);
-        l_tanggal.setBounds(230, 520, 90, 18);
+        l_tanggal.setBounds(230, 520, 90, 24);
 
         navbar.setBorderBottom(false);
         navbar.setBorderColor(new java.awt.Color(102, 102, 102));
@@ -138,7 +138,7 @@ public class TambahToDoList extends javax.swing.JPanel {
         btn_navIcon.setText("  To-Do List");
         btn_navIcon.setColorClick(new java.awt.Color(102, 102, 102));
         btn_navIcon.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_navIcon.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_navIcon.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_navIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_navIconMouseClicked(evt);
@@ -148,34 +148,40 @@ public class TambahToDoList extends javax.swing.JPanel {
         btn_navIcon.setBounds(36, 4, 130, 40);
 
         btn_myTask.setText("My Task");
-        btn_myTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_myTask.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_myTask.setColorOver(new java.awt.Color(153, 153, 153));
+        btn_myTask.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_myTask.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_myTaskMouseClicked(evt);
             }
         });
         navbar.add(btn_myTask);
-        btn_myTask.setBounds(630, 20, 80, 18);
+        btn_myTask.setBounds(630, 20, 80, 24);
 
         btn_pomodoro.setText("Pomodoro");
-        btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_pomodoro.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_pomodoro.setColorOver(new java.awt.Color(153, 153, 153));
+        btn_pomodoro.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_pomodoro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_pomodoroMouseClicked(evt);
             }
         });
         navbar.add(btn_pomodoro);
-        btn_pomodoro.setBounds(730, 20, 100, 18);
+        btn_pomodoro.setBounds(730, 20, 100, 24);
 
         btn_logout.setText("Logout");
-        btn_logout.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_logout.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_logout.setColorOver(new java.awt.Color(153, 153, 153));
+        btn_logout.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_logoutMouseClicked(evt);
             }
         });
         navbar.add(btn_logout);
-        btn_logout.setBounds(850, 20, 70, 18);
+        btn_logout.setBounds(850, 20, 70, 24);
 
         btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
         navbar.add(btn_profile);
@@ -191,16 +197,16 @@ public class TambahToDoList extends javax.swing.JPanel {
         l_userName.setText("Halo,");
         l_userName.setColorClick(new java.awt.Color(0, 0, 0));
         l_userName.setColorOver(new java.awt.Color(0, 0, 0));
-        l_userName.setFont(new java.awt.Font("Gavoline", 1, 24)); // NOI18N
+        l_userName.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         add(l_userName);
         l_userName.setBounds(230, 140, 550, 30);
 
         l_greet.setText("Silahkan isi data berikut untuk menambahkan tugas ke list kamu");
         l_greet.setColorClick(new java.awt.Color(0, 0, 0));
         l_greet.setColorOver(new java.awt.Color(0, 0, 0));
-        l_greet.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_greet.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         add(l_greet);
-        l_greet.setBounds(230, 170, 560, 18);
+        l_greet.setBounds(230, 170, 560, 24);
 
         p_status.setBorderWidth(1);
         p_status.setCornerRadius(20);

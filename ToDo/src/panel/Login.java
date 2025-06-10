@@ -55,7 +55,7 @@ public class Login extends javax.swing.JPanel {
         navIcon.setText("  To-Do List");
         navIcon.setColorClick(new java.awt.Color(102, 102, 102));
         navIcon.setColorOver(new java.awt.Color(153, 153, 153));
-        navIcon.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        navIcon.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         navIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 navIconMouseClicked(evt);
@@ -70,7 +70,7 @@ public class Login extends javax.swing.JPanel {
         btn_login.setColor(new java.awt.Color(245, 245, 245));
         btn_login.setColorClick(new java.awt.Color(220, 220, 220));
         btn_login.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_login.setFont(new java.awt.Font("Gavoline", 0, 15)); // NOI18N
+        btn_login.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         btn_login.setRadius(15);
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +86,7 @@ public class Login extends javax.swing.JPanel {
         btn_register.setColor(new java.awt.Color(245, 245, 245));
         btn_register.setColorClick(new java.awt.Color(220, 220, 220));
         btn_register.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_register.setFont(new java.awt.Font("Gavoline", 0, 15)); // NOI18N
+        btn_register.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         btn_register.setRadius(15);
         btn_register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +102,7 @@ public class Login extends javax.swing.JPanel {
         btn_close.setColor(new java.awt.Color(255, 255, 255));
         btn_close.setColorClick(new java.awt.Color(220, 220, 220));
         btn_close.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_close.setFont(new java.awt.Font("Gavoline", 0, 15)); // NOI18N
+        btn_close.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         btn_close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_closeActionPerformed(evt);
@@ -184,17 +184,17 @@ public class Login extends javax.swing.JPanel {
         l_titleForm.setText("Login");
         l_titleForm.setColorClick(new java.awt.Color(0, 0, 0));
         l_titleForm.setColorOver(new java.awt.Color(0, 0, 0));
-        l_titleForm.setFont(new java.awt.Font("Gavoline", 0, 36)); // NOI18N
+        l_titleForm.setFont(new java.awt.Font("SansSerif", 0, 36)); // NOI18N
 
         l_username.setText("Username");
         l_username.setColorClick(new java.awt.Color(0, 0, 0));
         l_username.setColorOver(new java.awt.Color(0, 0, 0));
-        l_username.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_username.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
 
         l_password.setText("Password");
         l_password.setColorClick(new java.awt.Color(0, 0, 0));
         l_password.setColorOver(new java.awt.Color(0, 0, 0));
-        l_password.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_password.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
 
         t_password.setForeground(new java.awt.Color(0, 0, 0));
         t_password.setBorderFocusColor(new java.awt.Color(128, 128, 128));
@@ -218,7 +218,7 @@ public class Login extends javax.swing.JPanel {
         btn_loginForm.setColor(new java.awt.Color(0, 0, 0));
         btn_loginForm.setColorClick(new java.awt.Color(102, 102, 102));
         btn_loginForm.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_loginForm.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        btn_loginForm.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         btn_loginForm.setRadius(15);
         btn_loginForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,12 +229,12 @@ public class Login extends javax.swing.JPanel {
         l_belumPunyaAkun.setText("Belum punya akun?");
         l_belumPunyaAkun.setColorClick(new java.awt.Color(0, 0, 0));
         l_belumPunyaAkun.setColorOver(new java.awt.Color(0, 0, 0));
-        l_belumPunyaAkun.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_belumPunyaAkun.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
 
         btn_registerForm.setText("Register");
         btn_registerForm.setColorClick(new java.awt.Color(102, 102, 102));
         btn_registerForm.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_registerForm.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_registerForm.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_registerForm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_registerFormMouseClicked(evt);
@@ -250,27 +250,19 @@ public class Login extends javax.swing.JPanel {
         p_registerForm4Layout.setHorizontalGroup(
             p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_registerForm4Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(l_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(l_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(p_registerForm4Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(t_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                            .addComponent(t_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(l_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(l_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(p_registerForm4Layout.createSequentialGroup()
-                                .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(t_password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-                                    .addComponent(t_username, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(l_usernameIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                                    .addComponent(l_passwordIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)))))
-                    .addGroup(p_registerForm4Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(l_belumPunyaAkun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_registerForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(l_usernameIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                            .addComponent(l_passwordIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_registerForm4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -278,6 +270,12 @@ public class Login extends javax.swing.JPanel {
                     .addComponent(p_circle4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(l_titleForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(161, 161, 161))
+            .addGroup(p_registerForm4Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(l_belumPunyaAkun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_registerForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         p_registerForm4Layout.setVerticalGroup(
             p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +284,7 @@ public class Login extends javax.swing.JPanel {
                 .addComponent(p_circle4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(l_titleForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(l_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,13 +296,13 @@ public class Login extends javax.swing.JPanel {
                 .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(t_password, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(l_passwordIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(32, 32, 32)
-                .addComponent(btn_loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(btn_loginForm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(p_registerForm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(l_belumPunyaAkun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_registerForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         add(p_registerForm4);

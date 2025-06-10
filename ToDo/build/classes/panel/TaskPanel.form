@@ -106,7 +106,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Gavoline" size="24" style="0"/>
+              <Font name="SansSerif" size="24" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -120,7 +120,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Gavoline" size="14" style="0"/>
+              <Font name="SansSerif" size="14" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -134,7 +134,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Gavoline" size="18" style="0"/>
+              <Font name="SansSerif" size="18" style="0"/>
             </Property>
           </Properties>
         </Component>
@@ -171,6 +171,9 @@
           </Events>
         </Component>
         <Component class="component.MyCheckBox" name="chbx_status">
+          <Properties>
+            <Property name="cornerRadius" type="int" value="100"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbx_statusActionPerformed"/>
           </Events>

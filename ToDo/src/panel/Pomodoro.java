@@ -102,9 +102,6 @@ public class Pomodoro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        l_title = new component.MyLabel();
-        p_footer3 = new component.MyPanelCustBorder();
-        l_title2 = new component.MyLabel();
         myPanel1 = new component.MyPanel();
         btn_pause = new component.MyButton();
         btn_start = new component.MyButton();
@@ -115,6 +112,9 @@ public class Pomodoro extends javax.swing.JPanel {
         l_shortBreak = new component.MyLabel();
         l_longBreak = new component.MyLabel();
         l_longTimer = new component.MyLabel();
+        l_title = new component.MyLabel();
+        l_title2 = new component.MyLabel();
+        l_session = new component.MyLabel();
         p_musicPlayer = new component.MyPanel();
         l_songArtist = new component.MyLabel();
         playbackBtns = new component.MyPanel();
@@ -126,176 +126,176 @@ public class Pomodoro extends javax.swing.JPanel {
         l_songTitle = new component.MyLabel();
         navbar = new component.MyPanelCustBorder();
         btn_navIcon = new component.MyLabel();
+        btn_profile = new javax.swing.JLabel();
         btn_myTask = new component.MyLabel();
         btn_pomodoro = new component.MyLabel();
         btn_logout = new component.MyLabel();
-        btn_profile = new javax.swing.JLabel();
-        l_session = new component.MyLabel();
+        myPanelCustBorder1 = new component.MyPanelCustBorder();
+        myLabel2 = new component.MyLabel();
         p_songListPanel = new component.MyPanel();
+        myLabel1 = new component.MyLabel();
 
         setBackground(new java.awt.Color(245, 245, 245));
         setPreferredSize(new java.awt.Dimension(1000, 700));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        l_title.setText("Pomodoro");
-        l_title.setColorClick(new java.awt.Color(0, 0, 0));
-        l_title.setColorOver(new java.awt.Color(0, 0, 0));
-        l_title.setFont(new java.awt.Font("Gavoline", 1, 72)); // NOI18N
-        add(l_title);
-        l_title.setBounds(153, 121, 380, 70);
-
-        p_footer3.setBorderBottom(false);
-        p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
-        p_footer3.setBorderLeft(false);
-        p_footer3.setBorderRight(false);
-        p_footer3.setBorderTop(false);
-        p_footer3.setPreferredSize(new java.awt.Dimension(100, 50));
-
-        javax.swing.GroupLayout p_footer3Layout = new javax.swing.GroupLayout(p_footer3);
-        p_footer3.setLayout(p_footer3Layout);
-        p_footer3Layout.setHorizontalGroup(
-            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
-        );
-        p_footer3Layout.setVerticalGroup(
-            p_footer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        add(p_footer3);
-        p_footer3.setBounds(0, 650, 1000, 50);
-
-        l_title2.setText("Timer");
-        l_title2.setColorClick(new java.awt.Color(0, 0, 0));
-        l_title2.setColorOver(new java.awt.Color(0, 0, 0));
-        l_title2.setFont(new java.awt.Font("Gavoline", 0, 48)); // NOI18N
-        add(l_title2);
-        l_title2.setBounds(160, 210, 134, 47);
-
-        myPanel1.setBorderColor(new java.awt.Color(255, 255, 255));
+        myPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        myPanel1.setBackgroundColor(new java.awt.Color(255, 255, 255, 190));
+        myPanel1.setBorderColor((new java.awt.Color(255, 255, 255, 190)));
         myPanel1.setCornerRadius(13);
         myPanel1.setLayout(null);
 
-        btn_pause.setForeground(new java.awt.Color(0, 0, 0));
+        btn_pause.setForeground(new java.awt.Color(102, 102, 102));
         btn_pause.setText("Pause");
-        btn_pause.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_pause.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_pause.setColor(new java.awt.Color(245, 245, 245));
         btn_pause.setColorClick(new java.awt.Color(220, 220, 220));
         btn_pause.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_pause.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
-        btn_pause.setRadius(15);
+        btn_pause.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btn_pause.setRadius(10);
         btn_pause.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pauseActionPerformed(evt);
             }
         });
         myPanel1.add(btn_pause);
-        btn_pause.setBounds(20, 210, 170, 30);
+        btn_pause.setBounds(20, 380, 170, 30);
 
         btn_start.setBorder(null);
-        btn_start.setForeground(new java.awt.Color(0, 0, 0));
+        btn_start.setForeground(new java.awt.Color(102, 102, 102));
         btn_start.setText("Start");
-        btn_start.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_start.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_start.setColor(new java.awt.Color(245, 245, 245));
         btn_start.setColorClick(new java.awt.Color(220, 220, 220));
         btn_start.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_start.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
-        btn_start.setRadius(15);
+        btn_start.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btn_start.setRadius(10);
         btn_start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_startActionPerformed(evt);
             }
         });
         myPanel1.add(btn_start);
-        btn_start.setBounds(120, 130, 140, 30);
+        btn_start.setBounds(120, 300, 140, 30);
 
-        btn_edit.setForeground(new java.awt.Color(0, 0, 0));
+        btn_edit.setForeground(new java.awt.Color(102, 102, 102));
         btn_edit.setText("Edit");
-        btn_edit.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_edit.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_edit.setColor(new java.awt.Color(245, 245, 245));
         btn_edit.setColorClick(new java.awt.Color(220, 220, 220));
         btn_edit.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_edit.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
-        btn_edit.setRadius(15);
+        btn_edit.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btn_edit.setRadius(10);
         btn_edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_editActionPerformed(evt);
             }
         });
         myPanel1.add(btn_edit);
-        btn_edit.setBounds(193, 210, 170, 30);
+        btn_edit.setBounds(200, 380, 170, 30);
 
-        btn_reset.setForeground(new java.awt.Color(0, 0, 0));
+        btn_reset.setForeground(new java.awt.Color(102, 102, 102));
         btn_reset.setText("Reset");
-        btn_reset.setBorderColor(new java.awt.Color(0, 0, 0));
+        btn_reset.setBorderColor(new java.awt.Color(204, 204, 204));
         btn_reset.setColor(new java.awt.Color(245, 245, 245));
         btn_reset.setColorClick(new java.awt.Color(220, 220, 220));
         btn_reset.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_reset.setFont(new java.awt.Font("Gavoline", 1, 18)); // NOI18N
-        btn_reset.setRadius(15);
+        btn_reset.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btn_reset.setRadius(10);
         btn_reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_resetActionPerformed(evt);
             }
         });
         myPanel1.add(btn_reset);
-        btn_reset.setBounds(120, 170, 140, 30);
+        btn_reset.setBounds(120, 340, 140, 30);
 
         l_mainTimer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         l_mainTimer.setText("00.25.00");
         l_mainTimer.setColorClick(new java.awt.Color(0, 0, 0));
         l_mainTimer.setColorOver(new java.awt.Color(0, 0, 0));
-        l_mainTimer.setFont(new java.awt.Font("Gavoline", 0, 72)); // NOI18N
+        l_mainTimer.setFont(new java.awt.Font("SansSerif", 1, 72)); // NOI18N
         myPanel1.add(l_mainTimer);
-        l_mainTimer.setBounds(0, 10, 380, 70);
+        l_mainTimer.setBounds(0, 150, 390, 80);
 
         l_shortTimer.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         l_shortTimer.setText("00.05.00");
         l_shortTimer.setColorClick(new java.awt.Color(0, 0, 0));
         l_shortTimer.setColorOver(new java.awt.Color(0, 0, 0));
-        l_shortTimer.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        l_shortTimer.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         myPanel1.add(l_shortTimer);
-        l_shortTimer.setBounds(4, 100, 130, 24);
+        l_shortTimer.setBounds(0, 260, 130, 32);
 
         l_shortBreak.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         l_shortBreak.setText("Short Break");
-        l_shortBreak.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_shortBreak.setColorClick(new java.awt.Color(0, 0, 0));
+        l_shortBreak.setColorOver(new java.awt.Color(0, 0, 0));
+        l_shortBreak.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         myPanel1.add(l_shortBreak);
-        l_shortBreak.setBounds(2, 80, 130, 18);
+        l_shortBreak.setBounds(0, 230, 130, 24);
 
         l_longBreak.setText("Long Break");
-        l_longBreak.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_longBreak.setColorClick(new java.awt.Color(0, 0, 0));
+        l_longBreak.setColorOver(new java.awt.Color(0, 0, 0));
+        l_longBreak.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         myPanel1.add(l_longBreak);
-        l_longBreak.setBounds(260, 80, 120, 18);
+        l_longBreak.setBounds(260, 230, 120, 24);
 
         l_longTimer.setText("00.20.00");
         l_longTimer.setColorClick(new java.awt.Color(0, 0, 0));
         l_longTimer.setColorOver(new java.awt.Color(0, 0, 0));
-        l_longTimer.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        l_longTimer.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         myPanel1.add(l_longTimer);
-        l_longTimer.setBounds(250, 100, 130, 24);
+        l_longTimer.setBounds(260, 260, 130, 32);
 
-        add(myPanel1);
-        myPanel1.setBounds(152, 262, 390, 360);
+        l_title.setText("Pomodoro");
+        l_title.setColorClick(new java.awt.Color(0, 0, 0));
+        l_title.setColorOver(new java.awt.Color(0, 0, 0));
+        l_title.setFont(new java.awt.Font("SansSerif", 1, 72)); // NOI18N
+        myPanel1.add(l_title);
+        l_title.setBounds(10, 10, 370, 80);
 
+        l_title2.setText("Timer");
+        l_title2.setColorClick(new java.awt.Color(0, 0, 0));
+        l_title2.setColorOver(new java.awt.Color(0, 0, 0));
+        l_title2.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        myPanel1.add(l_title2);
+        l_title2.setBounds(10, 90, 150, 62);
+
+        l_session.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        l_session.setText("Session : ");
+        l_session.setColorClick(new java.awt.Color(0, 0, 0));
+        l_session.setColorOver(new java.awt.Color(0, 0, 0));
+        l_session.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        myPanel1.add(l_session);
+        l_session.setBounds(210, 110, 170, 30);
+
+        add(myPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 112, 390, 460));
+
+        p_musicPlayer.setBackground(new java.awt.Color(255, 255, 255));
+        p_musicPlayer.setBackgroundColor(new java.awt.Color(255, 255, 255, 190));
         p_musicPlayer.setBorderColor(new java.awt.Color(255, 255, 255));
         p_musicPlayer.setCornerRadius(13);
         p_musicPlayer.setLayout(null);
 
         l_songArtist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        l_songArtist.setText("Motivation Playlist");
+        l_songArtist.setText("----");
         l_songArtist.setColorClick(new java.awt.Color(0, 0, 0));
         l_songArtist.setColorOver(new java.awt.Color(0, 0, 0));
-        l_songArtist.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_songArtist.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         p_musicPlayer.add(l_songArtist);
         l_songArtist.setBounds(0, 160, 340, 20);
 
-        playbackBtns.setBorderColor(new java.awt.Color(255, 255, 255));
+        playbackBtns.setBackground(new java.awt.Color(255, 255, 255));
+        playbackBtns.setBackgroundColor((new java.awt.Color(255, 255, 255, 190)));
+        playbackBtns.setBorderColor((new java.awt.Color(255, 255, 255, 190)));
         playbackBtns.setLayout(null);
 
         btn_playSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/play40.png"))); // NOI18N
         btn_playSong.setBorderColor(new java.awt.Color(255, 255, 255));
         btn_playSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_playSong.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_playSong.setColorOver(new java.awt.Color(102, 102, 102));
         btn_playSong.setRadius(1000);
         btn_playSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,6 +308,8 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_nextSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nextRight40.png"))); // NOI18N
         btn_nextSong.setBorderColor(new java.awt.Color(255, 255, 255));
         btn_nextSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_nextSong.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_nextSong.setColorOver(new java.awt.Color(102, 102, 102));
         btn_nextSong.setRadius(1000);
         btn_nextSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,6 +322,8 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_prevSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/nextLeft40.png"))); // NOI18N
         btn_prevSong.setBorderColor(new java.awt.Color(255, 255, 255));
         btn_prevSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_prevSong.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_prevSong.setColorOver(new java.awt.Color(102, 102, 102));
         btn_prevSong.setRadius(1000);
         btn_prevSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,6 +336,8 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_pauseSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/pause40.png"))); // NOI18N
         btn_pauseSong.setBorderColor(new java.awt.Color(255, 255, 255));
         btn_pauseSong.setColor(new java.awt.Color(255, 255, 255));
+        btn_pauseSong.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_pauseSong.setColorOver(new java.awt.Color(153, 153, 153));
         btn_pauseSong.setRadius(1000);
         btn_pauseSong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -351,7 +357,7 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_addMusic.setColor(java.awt.Color.black);
         btn_addMusic.setColorClick(new java.awt.Color(51, 51, 51));
         btn_addMusic.setColorOver(new java.awt.Color(51, 51, 51));
-        btn_addMusic.setFont(new java.awt.Font("Gavoline", 1, 14)); // NOI18N
+        btn_addMusic.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         btn_addMusic.setRadius(5);
         btn_addMusic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,13 +371,14 @@ public class Pomodoro extends javax.swing.JPanel {
         l_songTitle.setText("Motivation Playlist");
         l_songTitle.setColorClick(new java.awt.Color(0, 0, 0));
         l_songTitle.setColorOver(new java.awt.Color(0, 0, 0));
-        l_songTitle.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        l_songTitle.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         p_musicPlayer.add(l_songTitle);
         l_songTitle.setBounds(0, 70, 340, 20);
 
-        add(p_musicPlayer);
-        p_musicPlayer.setBounds(569, 69, 340, 210);
+        add(p_musicPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 69, 340, 210));
 
+        navbar.setBackground(new java.awt.Color(255, 255, 255));
+        navbar.setBackgroundColor((new java.awt.Color(255, 255, 255, 100)));
         navbar.setBorderBottom(false);
         navbar.setBorderColor(new java.awt.Color(102, 102, 102));
         navbar.setBorderLeft(false);
@@ -384,7 +391,7 @@ public class Pomodoro extends javax.swing.JPanel {
         btn_navIcon.setText("  Pomodoro");
         btn_navIcon.setColorClick(new java.awt.Color(102, 102, 102));
         btn_navIcon.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_navIcon.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_navIcon.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_navIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_navIconMouseClicked(evt);
@@ -393,53 +400,83 @@ public class Pomodoro extends javax.swing.JPanel {
         navbar.add(btn_navIcon);
         btn_navIcon.setBounds(36, 4, 130, 40);
 
+        btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
+        navbar.add(btn_profile);
+        btn_profile.setBounds(940, 0, 60, 50);
+
         btn_myTask.setText("My Task");
-        btn_myTask.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_myTask.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_myTask.setColorOver(new java.awt.Color(102, 102, 102));
+        btn_myTask.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_myTask.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_myTaskMouseClicked(evt);
             }
         });
         navbar.add(btn_myTask);
-        btn_myTask.setBounds(630, 20, 80, 18);
+        btn_myTask.setBounds(680, 10, 69, 24);
 
         btn_pomodoro.setText("Pomodoro");
-        btn_pomodoro.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_pomodoro.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_pomodoro.setColorOver(new java.awt.Color(102, 102, 102));
+        btn_pomodoro.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_pomodoro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_pomodoroMouseClicked(evt);
             }
         });
         navbar.add(btn_pomodoro);
-        btn_pomodoro.setBounds(730, 20, 100, 18);
+        btn_pomodoro.setBounds(760, 10, 82, 24);
 
         btn_logout.setText("Logout");
-        btn_logout.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        btn_logout.setColorClick(new java.awt.Color(204, 204, 204));
+        btn_logout.setColorOver(new java.awt.Color(102, 102, 102));
+        btn_logout.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_logoutMouseClicked(evt);
             }
         });
         navbar.add(btn_logout);
-        btn_logout.setBounds(850, 20, 70, 18);
+        btn_logout.setBounds(860, 10, 55, 24);
 
-        btn_profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/ImageUser.png"))); // NOI18N
-        navbar.add(btn_profile);
-        btn_profile.setBounds(940, 10, 30, 30);
+        add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
-        add(navbar);
-        navbar.setBounds(0, 0, 1000, 50);
+        myPanelCustBorder1.setBackground(new java.awt.Color(255, 255, 255));
+        myPanelCustBorder1.setBackgroundColor(new java.awt.Color(255, 255, 255, 190));
+        myPanelCustBorder1.setBorderBottom(false);
+        myPanelCustBorder1.setBorderLeft(false);
+        myPanelCustBorder1.setBorderRight(false);
+        myPanelCustBorder1.setBorderTop(false);
 
-        l_session.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        l_session.setText("Session : ");
-        l_session.setColorClick(new java.awt.Color(0, 0, 0));
-        l_session.setColorOver(new java.awt.Color(0, 0, 0));
-        l_session.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
-        add(l_session);
-        l_session.setBounds(370, 230, 170, 30);
+        myLabel2.setText("@copyrightToDoList2025");
+        myLabel2.setColorClick(new java.awt.Color(0, 0, 0));
+        myLabel2.setColorOver(new java.awt.Color(0, 0, 0));
+        myLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
 
+        javax.swing.GroupLayout myPanelCustBorder1Layout = new javax.swing.GroupLayout(myPanelCustBorder1);
+        myPanelCustBorder1.setLayout(myPanelCustBorder1Layout);
+        myPanelCustBorder1Layout.setHorizontalGroup(
+            myPanelCustBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(myPanelCustBorder1Layout.createSequentialGroup()
+                .addGap(417, 417, 417)
+                .addComponent(myLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(424, Short.MAX_VALUE))
+        );
+        myPanelCustBorder1Layout.setVerticalGroup(
+            myPanelCustBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myPanelCustBorder1Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(myLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
+        add(myPanelCustBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1000, 50));
+
+        p_songListPanel.setBackground(new java.awt.Color(255, 255, 255));
+        p_songListPanel.setBackgroundColor((new java.awt.Color(255, 255, 255, 190)));
         p_songListPanel.setBorderColor(new java.awt.Color(255, 255, 255));
-        p_songListPanel.setCornerRadius(30);
+        p_songListPanel.setCornerRadius(15);
 
         javax.swing.GroupLayout p_songListPanelLayout = new javax.swing.GroupLayout(p_songListPanel);
         p_songListPanel.setLayout(p_songListPanelLayout);
@@ -452,8 +489,10 @@ public class Pomodoro extends javax.swing.JPanel {
             .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        add(p_songListPanel);
-        p_songListPanel.setBounds(570, 290, 340, 330);
+        add(p_songListPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, -1, -1));
+
+        myLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/backgroundPomodoroo.jpg"))); // NOI18N
+        add(myLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 700));
     }// </editor-fold>//GEN-END:initComponents
     
     // MAIN TIMER
@@ -783,20 +822,53 @@ public class Pomodoro extends javax.swing.JPanel {
         l_songArtist.repaint();
     }    
     
-    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
-        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-        if (toDoFrame != null) {
-            musicPlayer.pauseSong();
-            toDoFrame.showPomodoro();
-        }
-    }//GEN-LAST:event_btn_navIconMouseClicked
+    private void btn_pauseSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pauseSongActionPerformed
+        ubahPauseJadiPlay();
+        musicPlayer.pauseSong();
+    }//GEN-LAST:event_btn_pauseSongActionPerformed
 
-    private void btn_pomodoroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pomodoroMouseClicked
-        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
-        if (toDoFrame != null) {
-            toDoFrame.showPomodoro();
+    private void btn_prevSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prevSongActionPerformed
+        String currentSongTitle = l_songArtist.getText();
+        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
+        if (currentSong == null) {
+            return;
         }
-    }//GEN-LAST:event_btn_pomodoroMouseClicked
+        if (SongRepository.getSongIndexPosition(currentSong) == 0) {
+            System.out.println("Musik Ada Di Awal Playlist");
+        } else {
+            musicPlayer.pauseSong();
+            Song nextSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) - 1);
+            musicPlayer.loadSong(nextSong);
+            l_songArtist.setText(nextSong.getSongTitle());
+        }
+    }//GEN-LAST:event_btn_prevSongActionPerformed
+
+    private void btn_nextSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextSongActionPerformed
+        String currentSongTitle = l_songArtist.getText();
+        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
+        if (currentSong == null) {
+            return;
+        }
+        if (SongRepository.getSongIndexPosition(currentSong) == SongRepository.getListSong(Login.user.getId_user()).size() - 1) {
+            System.out.println("Musik Ada Di Akhir Playlist");
+        } else {
+            musicPlayer.pauseSong();
+            Song nextSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) + 1);
+            musicPlayer.loadSong(nextSong);
+            l_songArtist.setText(nextSong.getSongTitle());
+        }
+    }//GEN-LAST:event_btn_nextSongActionPerformed
+
+    private void btn_playSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_playSongActionPerformed
+        String currentSongTitle = l_songArtist.getText();
+        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
+        if (currentSong == null) {
+            return;
+        } else {
+            ubahPlayJadiPause();
+            musicPlayer.playCurrentSong();
+        }
+    }//GEN-LAST:event_btn_playSongActionPerformed
 
     private void btn_logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseClicked
         MyOptionPane.showConfirm(this, "Yakin ingin logout dari akun anda?", "Konfirmasi", result -> {
@@ -811,32 +883,12 @@ public class Pomodoro extends javax.swing.JPanel {
         });
     }//GEN-LAST:event_btn_logoutMouseClicked
 
-    private void btn_nextSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextSongActionPerformed
-        String currentSongTitle = l_songArtist.getText();        
-        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
-        if (currentSong == null) {
-            return;
+    private void btn_pomodoroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pomodoroMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
+            toDoFrame.showPomodoro();
         }
-        if (SongRepository.getSongIndexPosition(currentSong) == SongRepository.getListSong(Login.user.getId_user()).size() - 1) {           
-            System.out.println("Musik Ada Di Akhir Playlist");            
-        } else {
-            musicPlayer.pauseSong();
-            Song nextSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) + 1);
-            musicPlayer.loadSong(nextSong);
-            l_songArtist.setText(nextSong.getSongTitle());   
-        }   
-    }//GEN-LAST:event_btn_nextSongActionPerformed
-
-    private void btn_playSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_playSongActionPerformed
-        String currentSongTitle = l_songArtist.getText();
-        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
-        if (currentSong == null) {
-            return;
-        } else {
-            ubahPlayJadiPause();
-            musicPlayer.playCurrentSong();
-        }        
-    }//GEN-LAST:event_btn_playSongActionPerformed
+    }//GEN-LAST:event_btn_pomodoroMouseClicked
 
     private void btn_myTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_myTaskMouseClicked
         ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
@@ -846,26 +898,13 @@ public class Pomodoro extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btn_myTaskMouseClicked
 
-    private void btn_prevSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prevSongActionPerformed
-        String currentSongTitle = l_songArtist.getText();        
-        Song currentSong = SongRepository.getSongByTitle(currentSongTitle);
-        if (currentSong == null) {
-            return;
-        }
-        if (SongRepository.getSongIndexPosition(currentSong) == 0) {           
-            System.out.println("Musik Ada Di Awal Playlist");            
-        } else {
+    private void btn_navIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_navIconMouseClicked
+        ToDoFrame toDoFrame = (ToDoFrame) SwingUtilities.getWindowAncestor(this);
+        if (toDoFrame != null) {
             musicPlayer.pauseSong();
-            Song nextSong = SongRepository.getListSong(Login.user.getId_user()).get(SongRepository.getSongIndexPosition(currentSong) - 1);
-            musicPlayer.loadSong(nextSong);
-            l_songArtist.setText(nextSong.getSongTitle());   
-        } 
-    }//GEN-LAST:event_btn_prevSongActionPerformed
-
-    private void btn_pauseSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pauseSongActionPerformed
-        ubahPauseJadiPlay();
-        musicPlayer.pauseSong();
-    }//GEN-LAST:event_btn_pauseSongActionPerformed
+            toDoFrame.showPomodoro();
+        }
+    }//GEN-LAST:event_btn_navIconMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -893,9 +932,11 @@ public class Pomodoro extends javax.swing.JPanel {
     private component.MyLabel l_songTitle;
     private component.MyLabel l_title;
     private component.MyLabel l_title2;
+    private component.MyLabel myLabel1;
+    private component.MyLabel myLabel2;
     private component.MyPanel myPanel1;
+    private component.MyPanelCustBorder myPanelCustBorder1;
     private component.MyPanelCustBorder navbar;
-    private component.MyPanelCustBorder p_footer3;
     private component.MyPanel p_musicPlayer;
     private component.MyPanel p_songListPanel;
     private component.MyPanel playbackBtns;

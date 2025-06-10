@@ -68,30 +68,30 @@ public class HomePage extends javax.swing.JPanel {
         l_title.setText("To Do List");
         l_title.setColorClick(new java.awt.Color(0, 0, 0));
         l_title.setColorOver(new java.awt.Color(0, 0, 0));
-        l_title.setFont(new java.awt.Font("Gavoline", 0, 72)); // NOI18N
+        l_title.setFont(new java.awt.Font("SansSerif", 0, 72)); // NOI18N
         add(l_title);
-        l_title.setBounds(140, 270, 333, 70);
+        l_title.setBounds(140, 240, 350, 92);
 
         l_text1.setText("Solusi manajemen aktivitas sehari-hari");
         l_text1.setColorClick(new java.awt.Color(0, 0, 0));
         l_text1.setColorOver(new java.awt.Color(0, 0, 0));
-        l_text1.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        l_text1.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         add(l_text1);
-        l_text1.setBounds(140, 340, 430, 24);
+        l_text1.setBounds(140, 340, 411, 32);
 
         l_text2.setText("untuk meningkatkan produktivitas");
         l_text2.setColorClick(new java.awt.Color(0, 0, 0));
         l_text2.setColorOver(new java.awt.Color(0, 0, 0));
-        l_text2.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        l_text2.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         add(l_text2);
-        l_text2.setBounds(140, 370, 381, 24);
+        l_text2.setBounds(140, 370, 361, 32);
 
         l_text3.setText("anda.");
         l_text3.setColorClick(new java.awt.Color(0, 0, 0));
         l_text3.setColorOver(new java.awt.Color(0, 0, 0));
-        l_text3.setFont(new java.awt.Font("Gavoline", 0, 24)); // NOI18N
+        l_text3.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         add(l_text3);
-        l_text3.setBounds(140, 400, 58, 24);
+        l_text3.setBounds(140, 400, 90, 32);
 
         p_footer3.setBorderBottom(false);
         p_footer3.setBorderColor(new java.awt.Color(102, 102, 102));
@@ -126,7 +126,7 @@ public class HomePage extends javax.swing.JPanel {
         navIcon.setText("  To-Do List");
         navIcon.setColorClick(new java.awt.Color(102, 102, 102));
         navIcon.setColorOver(new java.awt.Color(153, 153, 153));
-        navIcon.setFont(new java.awt.Font("Gavoline", 0, 18)); // NOI18N
+        navIcon.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         navIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 navIconMouseClicked(evt);
@@ -141,7 +141,7 @@ public class HomePage extends javax.swing.JPanel {
         btn_login.setColor(new java.awt.Color(245, 245, 245));
         btn_login.setColorClick(new java.awt.Color(220, 220, 220));
         btn_login.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_login.setFont(new java.awt.Font("Gavoline", 0, 15)); // NOI18N
+        btn_login.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         btn_login.setRadius(15);
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +157,7 @@ public class HomePage extends javax.swing.JPanel {
         btn_register.setColor(new java.awt.Color(245, 245, 245));
         btn_register.setColorClick(new java.awt.Color(220, 220, 220));
         btn_register.setColorOver(new java.awt.Color(250, 250, 250));
-        btn_register.setFont(new java.awt.Font("Gavoline", 0, 15)); // NOI18N
+        btn_register.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         btn_register.setRadius(15);
         btn_register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +173,7 @@ public class HomePage extends javax.swing.JPanel {
         btn_close.setColor(new java.awt.Color(255, 255, 255));
         btn_close.setColorClick(new java.awt.Color(220, 220, 220));
         btn_close.setColorOver(new java.awt.Color(153, 153, 153));
-        btn_close.setFont(new java.awt.Font("Gavoline", 0, 15)); // NOI18N
+        btn_close.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
         btn_close.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_closeActionPerformed(evt);

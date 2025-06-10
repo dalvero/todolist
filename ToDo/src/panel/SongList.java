@@ -17,13 +17,14 @@ public class SongList extends javax.swing.JPanel {
         this.pomodoro = pomodoro;
         containerPanel = new JPanel();        
         containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
-        containerPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        MyScrollPane scrollPane = new MyScrollPane(containerPanel);       
+        containerPanel.setBackground(new java.awt.Color(255, 255, 255, 190));
+        containerPanel.setOpaque(false);  
+        
+        MyScrollPane scrollPane = new MyScrollPane(containerPanel);
         scrollPane.setBounds(5, 5, 390, 315); // MENGATUR UKURAN DAN POSISI SCROLLPANE
                 
         setLayout(null);
-        add(scrollPane);        
+        add(scrollPane);
         showSongList();
         
     }
@@ -32,7 +33,7 @@ public class SongList extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground((new java.awt.Color(255, 255, 255, 190)));
         setPreferredSize(new java.awt.Dimension(340, 330));
         setLayout(null);
     }// </editor-fold>//GEN-END:initComponents

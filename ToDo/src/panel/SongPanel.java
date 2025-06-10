@@ -42,9 +42,11 @@ public class SongPanel extends javax.swing.JPanel {
         l_songTitle = new component.MyLabel();
         l_songArtist = new component.MyLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground((new java.awt.Color(255, 255, 255, 190)));
         setPreferredSize(new java.awt.Dimension(250, 80));
 
+        p_songPanel.setBackground(new java.awt.Color(255, 255, 255));
+        p_songPanel.setBackgroundColor((new java.awt.Color(255, 255, 255, 190)));
         p_songPanel.setBorderColor(new java.awt.Color(245, 245, 245));
         p_songPanel.setBorderWidth(3);
         p_songPanel.setCornerRadius(30);
@@ -67,7 +69,7 @@ public class SongPanel extends javax.swing.JPanel {
         l_songTitle.setText("Title");
         l_songTitle.setColorClick(new java.awt.Color(0, 0, 153));
         l_songTitle.setColorOver(new java.awt.Color(0, 120, 215));
-        l_songTitle.setFont(new java.awt.Font("Gavoline", 0, 20)); // NOI18N
+        l_songTitle.setFont(new java.awt.Font("SansSerif", 0, 20)); // NOI18N
         l_songTitle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 l_songTitleMouseClicked(evt);
@@ -79,7 +81,7 @@ public class SongPanel extends javax.swing.JPanel {
         l_songArtist.setText("Artist");
         l_songArtist.setColorClick(new java.awt.Color(0, 0, 0));
         l_songArtist.setColorOver(new java.awt.Color(0, 0, 0));
-        l_songArtist.setFont(new java.awt.Font("Gavoline", 0, 16)); // NOI18N
+        l_songArtist.setFont(new java.awt.Font("SansSerif", 0, 16)); // NOI18N
         p_songPanel.add(l_songArtist);
         l_songArtist.setBounds(30, 40, 230, 30);
 
@@ -89,13 +91,13 @@ public class SongPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(p_songPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(p_songPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
